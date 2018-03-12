@@ -1,0 +1,16 @@
+/* pages/myarticlelist/myarticlelist.wxss */
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.artlist{
+  margin-bottom: 50rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #ecf2f4;
+}

@@ -1,0 +1,56 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/article/article",
+    "pages/welfare/welfare",
+    "pages/person/person",
+    "pages/hotplace/hotplace",
+    "pages/hpmsdetail/hpmsdetail",
+    "pages/myarticlelist/myarticlelist",
+    "pages/myreserve/myreserve",
+    "pages/mypoints/mypoints",
+    "pages/myweal/myweal",
+    "pages/myinfo/myinfo",
+    "pages/writeart/writeart",
+    "pages/detailView/detailView",
+    "pages/demo/demo"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#128B8E",
+    "navigationBarTitleText": "YOUJIA民宿",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "white",
+    "backgroundColor": "#128B8E",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "img/icon/index01.png",
+        "selectedIconPath": "img/icon/index02.png"
+      },
+      {
+        "pagePath": "pages/article/article",
+        "text": "文章",
+        "iconPath": "img/icon/article01.png",
+        "selectedIconPath": "img/icon/article02.png"
+      },
+      {
+        "pagePath": "pages/welfare/welfare",
+        "text": "福利",
+        "iconPath": "img/icon/welfare01.png",
+        "selectedIconPath": "img/icon/welfare02.png"
+      },
+      {
+        "pagePath": "pages/person/person",
+        "text": "我的",
+        "iconPath": "img/icon/person01.png",
+        "selectedIconPath": "img/icon/person02.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+<% include head.ejs%>
+<main id="main-container">
+    <!-- Page Header -->
+    <div class="content bg-gray-lighter">
+        <div class="row items-push">
+            <div class="col-sm-7">
+                <h1 class="page-heading">
+                    用户信息表<small>用户个人信息严禁泄露，违者将追究法律责任！</small>
+                </h1>
+            </div>
+            <div class="col-sm-5 text-right hidden-xs">
+                <ol class="breadcrumb push-10-t">
+                    <li>表格</li>
+                    <li><a class="link-effect" href="">用户</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- END Page Header -->
+
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Dynamic Table Full -->
+        <div class="block">
+            <div class="block-header">
+                <h3 class="block-title">基本信息<small>严格保密</small></h3>
+            </div>
+            <div class="block-content">
+                <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
+                <table class="table table-bordered table-striped js-dataTable-full">
+                    <thead>
+                    <tr>
+                        <th class="text-center">用户id</th>
+                        <th class="text-center">名字</th>
+                        <th class="hidden-xs text-center">年龄</th>
+                        <th class="hidden-xs text-center" style="width: 5%;">性别</th>
+                        <th class="text-center" style="width: 10%;">手机号</th>
+                        <th class="hidden-xs text-center">邮箱</th>
+                        <th class="text-center" style="width: 10%;">积分</th>
+                        <th class="text-center" style="width: 10%;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% for(var u=0;u<userinfo.length;u++){%>
+                    <tr>
+                        <td class="text-center"><%=userinfo[u].uid%></td>
+                        <td class="font-w600 text-center"><%=userinfo[u].username%></td>
+                        <td class="hidden-xs text-center"><%=userinfo[u].age%></td>
+                        <td class="hidden-xs text-center"><%=userinfo[u].sex%></td>
+                        <td class="hidden-xs text-center"><%=userinfo[u].usertel%></td>
+                        <td class="hidden-xs text-center"><%=userinfo[u].email%></td>
+                        <td class="hidden-xs text-center">
+                            <span class="label label-primary"><%=userinfo[u].rank%></span>
+                        </td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <button class="btn-tocan btn btn-xs btn-default" value="<%=userinfo[u].uid%>" type="button" data-toggle="tooltip" title="查看预约"><i class="fa fa-clock-o"></i></button>
+                                <button class="btn-up btn btn-xs btn-default" value="<%=userinfo[u].uid%>" type="button" data-toggle="tooltip" title="修改"><i class="fa fa-pencil"></i></button>
+                                <button class="btn-det btn btn-xs btn-default" value="<%=userinfo[u].uid%>" type="button" data-toggle="tooltip" title="删除"><i class="fa fa-times"></i></button>
+                                <input class="checkit" name="checku" type="checkbox" value="<%=userinfo[u].uid%>" title="选中">
+                            </div>
+                        </td>
+                    </tr>
+                    <% }%>
+                    </tbody>
+                    <div class="boo" style="float: right;">
+                        <input type="checkbox" name="checkall"  id="bo1">全选
+                        <input type="checkbox" name="checknone" id="bo2">不选
+                        <button class="btn-list btn btn-xs btn-default" type="button" data-toggle="tooltip" title="批量删除">
+                            <i class="fa fa-check-square">批量删除</i>
+                        </button>
+                    </div>
+                    <div class="clearfix"></div>
+                </table>
+            </div>
+        </div>
+        <!-- END Dynamic Table Simple -->
+    </div>
+    <!-- END Page Content -->
+</main>
+<% include footer.ejs%>

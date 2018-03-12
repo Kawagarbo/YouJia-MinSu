@@ -1,0 +1,100 @@
+ .containers{
+  height:100%;
+  width:100%;
+  background-color: #F8F8F8;
+} 
+.topbox{
+  background-color: white;
+  display:flex;
+  flex-wrap: wrap;
+  margin-top:30rpx;
+  height:280rpx;
+  width:100%;
+}
+.title{
+   display:flex;
+   width:100%;
+   height:30%;
+} 
+.wrank{
+  display:flex;
+  width:50%;
+  height:30%;
+}
+.telephone{
+ display:flex;
+  width:60%;
+   height:30%;
+}
+.duihuan{
+position:relative;
+top:10rpx;
+left:10rpx;
+}
+.views{
+  font-size: 16px;
+  
+}
+.views_view{
+  font-size: 14px;
+  margin-top:10rpx;
+  color:gray;
+  margin-left:20rpx;
+}
+.price{
+  text-decoration:line-through;
+    color:red;
+}
+.space{
+    display:flex;
+    width:100%;
+    background-color: white;
+    height:30rpx;
+    border-bottom: 1px solid darkgray;
+}
+.bottom-box{
+display:flex; 
+margin-top:30rpx;
+flex-wrap: wrap;
+ background-color: white;
+border-bottom: 1px solid gray;
+}
+
+.bottomviews{
+  width:24%;
+  height:30rpx;
+  font-size: 16px;
+}
+.bottomviews_view{
+  margin-top: 15rpx;
+  font-size: 14px;
+  color:gray;
+}
+.address{
+  display:flex; 
+   width:100%;
+}
+.addresscontent{
+   width:100%;
+   margin-left: 100rpx;
+}
+.facilitycontent{
+  width:100%;
+  margin-left: 100rpx;
+}
+.sons{
+   width:100%;
+   display:flex;
+   flex-wrap: wrap;
+   border-bottom:1rpx dashed darkgray;  
+}
+.intorduce{
+display:flex; 
+margin-top:50rpx;
+flex-wrap: wrap;
+
+}
+.intorducecontent{
+  margin-top: 40rpx;
+  font-size: 14px;
+}

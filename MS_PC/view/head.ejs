@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>友家民宿网</title>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <!--引入CSS和JS-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="js/index.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/hotplace.css">
+    <script type="text/javascript" src="js/hotplace.js"></script>
+    <script type="text/javascript" src="js/distribution.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/welfare.css">
+
+    <!--引入选择省市组件-->
+    <script type="text/javascript" src="js/distpicker/distpicker.data.js"></script>
+    <script type="text/javascript" src="js/distpicker/distpicker.js"></script>
+    <!-- person -->
+    <script src="js/person.js"></script>
+    <link rel="stylesheet" href="css/person.css">
+    <script src="./js/login.js"></script>
+
+</head>
+
+<body>
+<!-- 网页头部导航栏块 -->
+<nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+    <div class="container">
+        <div class="navbar navbar-header">
+            <a href=" " class="navbar-brand">
+                <img src="./img/YouJia_logo.png " alt=" " id="YouJia-img">
+            </a>
+            <span id="YouJia-title">友家YouJia</span>
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-box" id="navbar-toggle-btn">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class='collapse navbar-collapse' id='navbar-collapse-box'>
+            <ul class="nav navbar-nav " id="nav-item1">
+                <li><a href="index">首页</a></li>
+                <li>
+                    <a href="forum">YouJia故事</a>
+                </li>
+                <li><a href="welfareindex">YouJia福利社</a></li>
+                <li><a href="person" class="hidden-sm">个人主页</a></li>
+            </ul>
+            <form class="navbar-form navbar-left" style="margin:15px 0px;">
+                <div class="form-group hidden-md hidden-sm">
+                    <input type="text" class="form-control" placeholder="搜索">
+                </div>
+                <button type="submit" class="btn btn-default glyphicon glyphicon-search hidden-md hidden-sm"></button>
+            </form>
+            <ul class="nav navbar-nav navbar-right" id="nav-item2">
+                <li>
+                    <button id="userlogin" class="btn btn-default"><%= userse?userse.username:'登录'%></button>
+                </li>
+                <li>
+                    <button id='reordel' class="btn btn-default"><%= userse?'注销':'注册'%></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

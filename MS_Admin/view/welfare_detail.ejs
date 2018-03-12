@@ -1,0 +1,89 @@
+<% include head.ejs%>
+
+<main id="main-container">
+    <!-- Page Content -->
+    <div class="content content-narrow">
+        <!-- Material Design -->
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Static Labels -->
+                <div class="block">
+                    <div class="block-content block-content-narrow">
+                        <form class="form-horizontal push-10-t" action="" method="GET">
+                            <% {thisdata.forEach(function (data){%>
+                            <h2 class="content-heading" style="font-size:25px;height:50px;line-height:30px;width:100%;text-align: center;"><%=data.whtitle%></h2>
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-material">
+                                        <div class="form-group" style="height:300px;width:500px;">
+                                            <img src="<%=data.whpic%>" alt="" style="height:300px;width:500px;border:1px solid gray;">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-xs-push-2">
+                                    <div class="form-material">
+                                        <input  onfocus=this.blur() value="" class="form-control"  id="material-password" name="material-password" placeholder="<%=data.wkeywords%>">
+                                        <label for="material-password">类型</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-xs-push-2">
+                                    <div class="form-material">
+                                        <input onfocus=this.blur() class="form-control" value="" id="material-password" name="material-password" placeholder="<%=data.whrank%>">
+                                        <label for="material-password">兑换所需积分</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-xs-push-2">
+                                    <div class="form-material">
+                                        <input onfocus=this.blur() class="form-control" value="" id="material-password" name="material-password" placeholder="<%=data.waddress%>">
+                                        <label for="material-password">地址</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-xs-push-2">
+                                    <div class="form-material">
+                                        <input onfocus=this.blur() class="form-control" value="" id="material-password" name="material-password" placeholder="<%=data.whostphone%>">
+                                        <label for="material-password">房东联系电话</label>
+                                    </div>
+                                </div>
+                                <div class="col-xs-4 col-xs-push-2">
+                                    <div class="form-material">
+                                        <input onfocus=this.blur() class="form-control" value="" id="material-password" name="material-password" placeholder="<%=data.wreceptiontime%>">
+                                        <label for="material-password">接待时间</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-4 col-xs-push-2">
+                                    <div class="form-material">
+                                        <input onfocus=this.blur() class="form-control" value="" id="material-password" name="material-password" placeholder="<%=data.wdeadline%>">
+                                        <label for="material-password">入住时间</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <h2 style="height:50px;">
+                                    民宿介绍
+                                </h2>
+                                <div class="col-xs-12" >
+                                    <%=data.whdet%>
+                                </div>
+                            </div>
+                            <%})}%>
+                            <div class="form-group">
+                                <div class="col-sm-3 col-sm-push-11">
+                                    <button class="btn btn-sm btn-primary backAllwelfare" type="button">返回</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+                <!-- END Static Labels -->
+            </div>
+        </div>
+
+    </div>
+    <!-- END Page Content -->
+</main>
+<!--<textarea onfocus=this.blur() class="form-control" id="material-textarea-large" name="material-textarea-large" rows="8" placeholder="Please add a comment"></textarea>-->
+
+<% include footer.ejs%>

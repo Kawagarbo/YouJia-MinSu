@@ -1,0 +1,94 @@
+/* pages/hpmsdetail/hpmsdetail.wxss */
+/*轮播图  */
+swiper {
+  height: 200px;
+}
+swiper-item image {
+  width: 100%;
+  height: 100%;
+}
+/*民宿信息  */
+.detail {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+  margin-bottom: 0rpx;
+}
+.detail-item1{
+display: flex;
+flex-direction: column;
+align-items: center;
+border-bottom: 1px solid #ddd;
+}
+.detail-item1 .item1-text1{
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  color: #333;
+}
+.detail-item1 .item1-text1{
+  font-size: 16px;
+  color: #333;
+  letter-spacing: 1px;
+}
+.detail-item1 .item1-text2{
+  font-size: 14px;
+  color: #333;
+  width: 50%;
+  text-align: center;
+}
+.detail-item2{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid #bdbdbd;
+  padding: 3px 0px;
+}
+.detail-item2 .item2-text .textweight{
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.detail-item2 .item2-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  color: #666;
+  font-size: 14px;
+}
+.detail-item3{
+    display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 3px 0px;
+    color: #666;
+  font-size: 14px;
+  border-bottom: 1px solid #ccc;
+}
+.detail-item3 .addr{
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+.detail-item4{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  color: #666;
+  font-size: 14px;
+}
+.detail-item4 .intr{
+  font-weight: 900;
+  display: flex;
+  letter-spacing: 2px;
+  flex-direction: row;
+  text-align: center;
+}
+
+/*底部悬浮  */
+.detail-nav {
+  display: flex;
+  flex-direction: row;
+  
+}

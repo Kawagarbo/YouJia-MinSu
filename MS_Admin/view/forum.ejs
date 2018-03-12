@@ -1,0 +1,103 @@
+<% include head.ejs%>
+<!-- Page JS Plugins CSS -->
+<link rel="stylesheet" href="assets/js/plugins/datatables/jquery.dataTables.min.css">
+
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Page Header -->
+    <div class="content bg-gray-lighter">
+        <div class="row items-push">
+            <div class="col-sm-7">
+                <h1 class="page-heading">
+                    论坛文章管理 <small>此信息仅超级管理员可见，禁止外传</small>
+                </h1>
+            </div>
+            <div class="col-sm-5 text-right hidden-xs">
+                <ol class="breadcrumb push-10-t">
+                    <li>故事交流版块管理</li>
+                    <li><a class="link-effect" href="">查看文章</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- END Page Header -->
+
+    <!-- Dynamic Table Full -->
+<div class="block">
+    <div class="block-header">
+        <h3 class="block-title">所有文章 </h3>
+    </div>
+    <div class="block-content">
+        <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
+        <table class="table table-bordered table-striped js-dataTable-full">
+            <thead>
+            <tr>
+                <th class="text-center">文章id</th>
+                <th>标题</th>
+                <th class="hidden-xs">作者</th>
+                <th class="hidden-xs" style="width: 25%;">关键字</th>
+                <th class="hidden-xs" style="width: 10%;">详情</th>
+                <th class="text-center" style="width: 100px;">编辑</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%
+            forumData.forEach(function (item) {
+            var keys=item.akeywords.split('&&');
+            %>
+            <tr>
+                <td class="text-center"><%=item.tid%></td>
+                <td class="font-w600"><%=item.title %></td>
+                <td class="hidden-xs"><%=item.author %></td>
+                <td class="hidden-xs">
+                    <% keys.forEach(function (keywords) {%>
+                        <span class="label label-success"><%=keywords%></span>
+                    <%})%>
+
+                </td>
+                <td class="hidden-xs text-center">
+                    <a href="details?tid=<%=item.tid%>&&uid=<%=item.uid%>&&cuid=<%=item.cuid%>" ><span class="label label-info">查看详情</span></a>
+                </td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn btn-xs btn-default delete-btn" tid="<%=item.tid%>" type="button" data-toggle="tooltip" title="删除"><i class="fa fa-times"></i></button>
+                    </div>
+                </td>
+            </tr>
+            <%})%>
+            </tbody>
+        </table>
+
+</div>
+</div>
+<!-- END Dynamic Table Full -->
+    <!-- Fade In Modal -->
+    <div class="modal fade" id="delArticle" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="block block-themed block-transparent remove-margin-b">
+                    <div class="block-header bg-primary-dark">
+                        <ul class="block-options">
+                            <li>
+                                <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                            </li>
+                        </ul>
+                        <h3 class="block-title">网站提示</h3>
+                    </div>
+                    <div class="block-content">
+                        <p>删除后可能无法恢复，请慎重考虑</p>
+                        <p>是否确认删除？</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">再考虑考虑</button>
+                    <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal" id="confirmDel"><i class="fa fa-check"></i> 删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END Fade In Modal -->
+</main>
+
+<script src="assets/js/pages/forum.js"></script>
+<% include footer.ejs%>

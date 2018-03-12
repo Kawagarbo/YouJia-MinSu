@@ -1,0 +1,9 @@
+<!--pages/myarticlelist/myarticlelist.wxml-->
+<view class='container'>
+    <view class='artlist' wx:for="{{artlists}}" wx:key="">
+          <text>标题:{{item.title}}</text>
+          <text>作者:{{item.author}}</text>
+          <text>内容:{{item.acontent}}</text>
+          <text>关键字:{{item.akeywords}}</text>
+    </view>
+</view>

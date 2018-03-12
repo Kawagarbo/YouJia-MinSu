@@ -1,0 +1,14 @@
+<!--pages/hotplace/hotplace.wxml-->
+<view class='container'>
+    <view class="minsu-list">
+        <view class="minsu-item" bindtap='detailTap' wx:for="{{allmsInfo}}" wx:for-item="info"   wx:key="" data-hid='{{info.hid}}'>
+          <image class="item-left" src="{{info.himg[0]}}"></image>
+          <view class="item-right">
+            <view class="text-title">{{info.htitle}}</view>
+            <view class="text">房东号码：{{info.hphone}}</view>
+            <text class="text">类型: {{info.htype==1?'景观民宿':''}}{{info.htype==2?'温泉民宿':''}}{{info.htype==3?'海滨民宿':''}}{{info.htype==4?'农园民宿':''}}{{info.htype==5?'传统建筑民宿':''}}{{info.htype==6?'艺术文化民宿':''}}</text>
+            <text class="text">City: {{info.hcity}}</text>
+          </view>
+        </view>
+    </view>
+</view>

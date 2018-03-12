@@ -1,0 +1,142 @@
+<% include head.ejs%>
+<script type="text/javascript" src="js/welfare.js"></script>
+ <div class="container" >
+     <!--福利社说明展示-->
+      <div class="row bgbox">
+          <div class="col-lg-9" style="height:320px;" class="imgbox">
+              <img src="assets/img/welfarebg.jpg" alt=""  class="bgimg ">
+          </div>
+          <div class="col-lg-3 hidden-xs hidden-sm visible-lg box">
+              <div id="littlehead" >
+                    福利社说明
+              </div>
+              <div id="div2" >
+                  </br>
+                  福利社是为友家会员提供的免费试住体验和分享频道。</br>
+                  每周我们都会精心挑选全国各地的特色好房，给愿意尝试不同住宿方式的途家会员免费体验。</br>
+                  会员在规定时限内可以通过积分进行兑换免费的住所体验</br>
+                  体验完成后，会员需要在途家社区分享入住体验，帮助更多用户发现途家上的美好住所。
+              </div>
+          </div>
+      </div>
+<!--以下住宿可以积分兑换啦-->
+     <div class="row" style="height:90px;position:relative;margin-top:40px;border-bottom:1px solid red;">
+         <div style="height:90px;line-height: 90px;text-align: left;font-size: 25px;">以下住宿可以积分兑换啦</div>
+     </div>
+<!--积分可以兑换的住宿-->
+    <div style="position: relative;margin:30px 0 20px 0;">
+        <form class="form-horizontal" method="GET">
+            <div class="parentnode">
+                <% {data.forEach(function (data){%>
+                <div class="row" style="margin:-15px -15px 5px -15px;">
+                    <div style="position: relative;margin-top:20px;">
+                        <div class="col-lg-7" style="height:380px ;padding-left: 0;" class="imgbox LazyLoad" >
+                            <img src="<%=[data.whpic.split(" ")][0][0]%>" data-src="" alt=""  class="welfareimg lookdetail" style="height:100%;width:100%;margin:0;padding:0;" wid="<%=data.wid%>">
+                        </div>
+                        <div class="col-lg-5 hidden-xs hidden-sm visible-lg" style="height:380px;border:1px solid #E7E7E7;background-color: white;">
+                            <div>
+                                <h3><%=data.whtitle%></h3>
+                            </div>
+                            <div class="form-group allli">
+                                <ul>
+                                    <li><b>住所类型:</b> &nbsp<%=data.wkeywords%></li>
+                                    <li><b>地址:</b>&nbsp<%=data.waddress%></li>
+                                    <li><b>兑换所需要的积分:</b>&nbsp<%=data.whrank%>分</li>
+                                    <li><b>入住时期:</b>&nbsp<%=data.wdeadline%></li>
+                                </ul>
+                            </div>
+                            <div class="form-group" style="position: relative;top:40px;">
+                                <div class="col-sm-10 col-sm-push-2">
+                                    <button class="btn btn-lg lookdetail" type="button" wid="<%=data.wid%>" userid="<%= userse.uid?userse.uid:''%>"  username="<%= userse.username? userse.username:''%>"  usersrank="<%= userse.rank?userse.rank:''%>">查看详细信息</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%})}%>
+            </div>
+
+        </form>
+            <div class="row loadmore" style="position: relative;margin-top:50px;margin-bottom:50px;">
+                <div style="height:40px;width:100%;text-align: center;font-size: 20px;">
+                   加载更多
+                </div>
+            </div>
+    </div>
+
+
+
+     <!--一些体验展示-->
+
+     <div class="row" style="height:90px;position:relative;border-bottom:1px solid red;border-top:1px solid #CCCCCC;">
+         <div style="height:90px;line-height: 90px;text-align: left;font-size: 25px;">精彩体验故事</div>
+     </div>
+
+
+     <div class="row" style="position: relative;margin:-30px;margin-top:20px; ">
+         <% {articledata.forEach(function (datas){%>
+         <div class="col-sm-6 col-md-4">
+             <div class="thumbnail">
+                 <img src="<%=[datas.apic.split("&&")][0][0]%>" alt="..." class="experience" style="height:240px;width:100%;">
+                 <div class="caption">
+                     <h4 ><a href="detailsView?tid=<%=datas.tid%>&&cuid=<%=datas.cuid%>" style="color:black;font-size:16px;"><%=datas.title%></a></h4>
+                 </div>
+             </div>
+         </div>
+         <%})}%>
+     </div>
+
+
+     <div class="row" style="position: relative;margin-top:50px;margin-bottom:50px;">
+         <div style="height:40px;width:100%;text-align: center;font-size: 20px;">
+             <a href="forum">查看更多>></a>
+         </div>
+     </div>
+  </div>
+
+<!--&lt;!&ndash; 模态框 &ndash;&gt;-->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--模态框头部：标题和关闭按钮-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="modal-title">提示：</h4>
+            </div>
+            <!--模态框身体：提示信息-->
+            <div class="modal-body first">
+
+            </div>
+            <!--模态框脚部：取消和确定两个按钮-->
+            <div class="modal-footer">
+                <button type="button" class="btn sure" data-dismiss="modal" >确定</button>
+                <button type="button" class="btn no" data-dismiss="modal" id="addsuccess">再想想</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="YouModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--模态框头部：标题和关闭按钮-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="nextmodal-title">提示：</h4>
+            </div>
+            <!--模态框身体：提示信息-->
+            <div class="modal-body next">
+
+            </div>
+            <!--模态框脚部：取消和确定两个按钮-->
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal" >好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% include footer.ejs%>

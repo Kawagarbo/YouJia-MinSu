@@ -1,0 +1,48 @@
+<% include head.ejs%>
+<div class="container" >
+
+    <!--民宿内容块-->
+    <div class="MSinfo-container">
+        <div class="row" >
+            <% for(var i=0;i<minsuData.length;i++){ %>
+            <div class="col-xs-12 col-md-6 col-lg-6 col-sm-6 itembox" style="margin: 15px 0px">
+                <div class="thumbnail" style="padding: 0px;margin: 0px">
+                    <div class="img-box">
+                        <img src="<%= Arr1[i][0]%>" alt="" style="width: 100%;height: 330px">
+                    </div>
+                    <div class="caption" style="text-align: center">
+                        <h3><%= minsuData[i].htitle %></h3>
+                        <p>...</p>
+                        <p></p>
+                    </div>
+                </div>
+            </div>
+            <% } %>
+        </div>
+
+    </div>
+
+    <!--分页-->
+
+    <nav aria-label="Page navigation" style="text-align: center">
+        <ul class="pagination pagination-lg">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+</div>
+<% include footer.ejs%>

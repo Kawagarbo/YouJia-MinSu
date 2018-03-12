@@ -1,0 +1,137 @@
+<% include head.ejs%>
+<script type="text/javascript" src="js/welfare.js"></script>
+<div class="container-fluid" style="margin-bottom: 400px;">
+    <!--积分可以兑换的住宿-->
+    <div style="position: relative;">
+        <form class="form-horizontal" method="GET">
+            <div class="row">
+                <% {Alldata.forEach(function (data){%>
+                <div style="margin-top:20px;margin-bottom:70px; padding:0px;" class="col-lg-10 col-lg-push-1">
+                        <div class="col-lg-8"  style="height:460px;padding:0px;" >
+                            <div class="thumbnail classthumbnail" style="height:460px;padding:0px;">
+                                <a href=""><img src="<%=imgArr[0]%>" alt="" class="experience" style="height:380px;width:100%;"></a>
+                                <div class="caption classcaption" style="height:80px;border:1px solid gray;margin:0;padding:0;">
+                                    <ul id="uls">
+                                        <%for(var i=0;i<imgArr.length;i++){%>
+                                            <li>
+                                                <img src="<%=imgArr[i]%>" alt="" class="littleimg" onmouseover="this.className='hover'" onmouseout="this.className=''">
+                                            </li>
+                                        <%}%>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="col-lg-4 hidden-xs hidden-sm visible-lg" style="height:463px;border:1px solid #E7E7E7;background-color: white;">
+                        <div>
+                            <h3><%=data.whtitle%></h3>
+                        </div>
+                        <div class="form-group allli">
+                            <ul>
+                                <li><b>住所类型:</b> &nbsp<%=data.wkeywords%></li>
+                                <li><b>兑换所需要的积分:</b><%=data.whrank%>分</li>
+                                <li><b>入住时期:</b><%=data.wdeadline%></li>
+                            </ul>
+                        </div>
+                        <div class="form-group" style="position: relative;margin-top:130px;">
+                            <div class="col-sm-9 col-sm-push-3">
+                                <button class="btn btn-lg rankwelfare" type="button"  whrank="<%=data.whrank%>" userid="<%= userse.uid%>"  username="<%= userse.username%>"  usersrank="<%= userse.rank%>"  wid="<%=data.wid%>">立即兑换</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%})}%>
+            </div>
+            <div class="row">
+                <% {Alldata.forEach(function (data){%>
+                <div class="col-lg-10 col-lg-push-1" style="height:250px;border:1px solid #E7E7E7;">
+
+                    <div style="border-bottom: 1px dashed gray; margin: 20px 0 20px 0px;">
+                        <h4>地址</h4>
+                        <div style="margin-top:-30px;margin-left:80px;"  class="spans">
+                            <span ><%=data.waddress%></span>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed gray; margin: 20px 0 20px 0px;">
+                        <h4>设施</h4>
+                        <div style="margin-top:-30px;margin-left:80px;" class="spans">
+                            <%for(var i=0;i<facility.length;i++){%>
+                            <span><%=facility[i]%></span>
+                            <%}%>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed gray; margin: 20px 0 20px 0px;">
+                        <h4>房东联系电话</h4>
+                        <div style="margin-top:-30px;margin-left:32px;" class="spans">
+                            <span style="margin-left: 100px;"><%=data.whostphone%></span>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed gray; margin: 20px 0 20px 0px;">
+                        <h4>接待时间</h4>
+                        <div style="margin-top:-30px;margin-left:30px;" class="spans">
+                            <span style="margin-left: 100px;"><%=data.wreceptiontime%></span>
+                        </div>
+                    </div>
+                    <div style="border-bottom: 1px dashed gray; margin: 20px 0 20px 0px;">
+                        <h4>退房时间</h4>
+                        <div style="margin-top:-30px;margin-left:30px;" class="spans">
+                            <span style="margin-left: 100px;"><%=data.checkouttime%></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-10 col-lg-push-1" style="height:300px;white-space: pre-wrap;font-size:16px;" >
+                    <h2>民宿介绍</h2><%=data.whdet%>
+                </div>
+            </div>
+            <%})}%>
+        </form>
+    </div>
+</div>
+
+<!--&lt;!&ndash; 模态框 &ndash;&gt;-->
+<div class="modal fade" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--模态框头部：标题和关闭按钮-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="modal-title">提示：</h4>
+            </div>
+            <!--模态框身体：提示信息-->
+            <div class="modal-body first">
+
+            </div>
+            <!--模态框脚部：取消和确定两个按钮-->
+            <div class="modal-footer">
+                <button type="button" class="btn sure" data-dismiss="modal" >确定</button>
+                <button type="button" class="btn no" data-dismiss="modal" id="addsuccess">再想想</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="YouModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--模态框头部：标题和关闭按钮-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="nextmodal-title">提示：</h4>
+            </div>
+            <!--模态框身体：提示信息-->
+            <div class="modal-body next">
+
+            </div>
+            <!--模态框脚部：取消和确定两个按钮-->
+            <div class="modal-footer">
+                <button type="button" class="btn" data-dismiss="modal" >好的</button>
+            </div>
+        </div>
+    </div>
+</div>
+<% include footer.ejs%>

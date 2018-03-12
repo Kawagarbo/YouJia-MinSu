@@ -1,0 +1,42 @@
+<% include head.ejs%>
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Page Header -->
+    <div class="content bg-image overflow-hidden" style="background-image: url('assets/img/photos/photo3@2x.jpg');">
+        <div class="push-50-t push-15">
+            <h1 class="h2 text-white animated zoomIn">管理员：<%=res.adname%></h1>
+            <h2 class="h5 text-white-op animated zoomIn">欢迎登录友家民宿管理系统，后台系统的用户信息属于机密，严禁泄露，请谨慎操作，违者将追究法律责任！</h2>
+        </div>
+    </div>
+    <!-- END Page Header -->
+    <!-- Page Content -->
+    <div class="content">
+        <div class="row">
+            <div class="col-lg-8 col-lg-push-2">
+                <button  class="btn btn-danger" style="margin: 100px 20px; width: 200px;height: 200px;border-radius: 100px;">
+                    <a href="ad_userinfo" style="color: #0f1315;">
+                        <i class="glyphicon glyphicon-user">用户信息</i>
+                    </a>
+                </button>
+                <button class="btn btn-success" style="margin: 100px 20px;width: 200px;height: 200px;border-radius: 100px;">
+                    <a href="lookMinSu" style="color: #0f1315;">
+                        <i class="glyphicon glyphicon-home">民宿信息</i>
+                    </a>
+                </button>
+                <button class="btn btn-primary" style="margin: 100px 20px;width: 200px;height: 200px;border-radius: 100px;">
+                    <a href="forum" style="color: #0f1315;">
+                        <i class="glyphicon glyphicon-pencil">文章</i>
+                    </a>
+                </button>
+                <button class="btn btn-info" style="margin: 100px 20px;width: 200px;height: 200px;border-radius: 100px;">
+                    <a href="allwelfare" style="color: #0f1315;">
+                        <i class="glyphicon glyphicon-gift">福利</i>
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- END Page Content -->
+</main>
+<!-- END Main Container -->
+<% include footer.ejs%>

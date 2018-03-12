@@ -1,0 +1,5 @@
+<!--pages/mypoints/mypoints.wxml-->
+<view class='boxpo'>
+      <view>积分:</view>
+      <view>{{user.rank}}</view>
+</view>

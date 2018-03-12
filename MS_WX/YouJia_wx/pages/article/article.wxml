@@ -1,0 +1,28 @@
+
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" style="width:100%; height:150"/>    
+    </swiper-item>
+  </block>
+</swiper>
+<view class='box'>
+  <view class='nav'>
+    <view class='pdtitle'>
+      <text class='title1'>生活不止眼前的苟且，还有诗和远方</text> 
+      <text class='title2'>Poems And Dreams</text>
+    </view>
+      <view class='ul'>
+        <view wx:for='{{title}}' wx:key="" class='li' bindtap='chooseItem' style="{{pageKeys==item?active_style:''}}" data-keys="{{item}}">{{item}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='content'>
+    <view wx:for="{{articlelist}}" wx:key="index" class='items' style='background-image:url("{{imgs[index][0]}}")' bindtap='articleDetailTap' data-tid='{{item.tid}}' data-cuid='{{item.cuid}}'>
+     <text class='artitle'>{{item.title}}</text>
+  </view>
+</view>
+
+

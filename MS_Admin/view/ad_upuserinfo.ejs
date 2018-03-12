@@ -1,0 +1,87 @@
+<% include head.ejs%>
+<main id="main-container">
+<div class="content content-narrow">
+    <!-- Material Design -->
+    <h2 class="content-heading">用户信息修改</h2>
+    <div class="row">
+        <div class="col-md-6 col-md-push-3">
+            <!-- Static Labels -->
+            <div class="block">
+                <div class="block-header">
+                    <ul class="block-options">
+                        <li>
+                            <button type="button"><i class="si si-settings"></i></button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title">具体信息</h3>
+                </div>
+                <% for(var i=0;i<data.length;i++){%>
+                <div class="block-content block-content-narrow">
+                    <form id="upinfo" class="form-horizontal push-10-t">
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                <div class="form-material form-material-success">
+                                    <input type="hidden" name="uid" value="<%=data[i].uid%>">
+                                    <input class="form-control" type="text" id="material-color-success" name="username" value="<%=data[i].username%>">
+                                    <label for="username">用户名</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                <div class="form-material form-material-success">
+                                    <input class="form-control" type="text" id="material-color-info" name="userage" value="<%=data[i].age%>">
+                                    <label for="userage">年龄</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                <div class="form-material form-material-success">
+                                    <select class="form-control" id="material-select" name="usersex" size="1">
+                                        <option <%= data[i].sex=='男'?'selected':''%>>男</option>
+                                        <option <%= data[i].sex=='女'?'selected':''%>>女</option>
+                                    </select>
+                                    <label for="usersex">请选择性别</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                <div class="form-material form-material-success">
+                                    <input class="form-control" type="text" id="material-color-warning" name="usertel" value="<%=data[i].usertel%>">
+                                    <label for="usertel">手机号</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                <div class="form-material form-material-success">
+                                    <input class="form-control" type="text" id="material-color-danger" name="useremail" value="<%=data[i].email%>">
+                                    <label for="useremail">邮箱</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                <div class="form-material form-material-success">
+                                    <input class="form-control" type="text" id="material-color-primary" name="userrank" value="<%=data[i].rank%>">
+                                    <label for="userrank">积分</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-9">
+                                <button class="btn-upsure btn btn-sm btn-primary" type="button">确认修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <%}%>
+            </div>
+            <!-- END Static Labels -->
+        </div>
+    </div>
+</div>
+</main>
+<% include footer.ejs%>

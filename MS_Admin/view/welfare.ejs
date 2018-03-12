@@ -1,0 +1,161 @@
+<% include head.ejs%>
+
+<main id="main-container">
+    <!-- Page Content -->
+    <div class="content content-narrow">
+        <!-- Forms Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Bootstrap Forms Validation -->
+                <h2 style="height:60px;text-align:center;">福利民宿信息添加</h2>
+                <div class="block">
+
+                    <div class="block-content ">
+                        <!-- jQuery Validation (.js-validation-bootstrap class is initialized in js/pages/base_forms_validation.js) -->
+                        <!-- For more examples you can check out https://github.com/jzaefferer/jquery-validation -->
+                        <form class="js-validation-bootstrap form-horizontal" method="post">
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" style="text-align: center" >民宿类型 </label>
+                                <div class="col-md-10">
+                                    <select class="form-control"  size="1" id='types' name="types" >
+                                        <option>...</option>
+                                        <option value="传统建筑民宿" name="types">传统建筑民宿</option>
+                                        <option value="海滨民宿">海滨民宿</option>
+                                        <option value="景观民宿">景观民宿</option>
+                                        <option value="温泉民宿">温泉民宿</option>
+                                        <option value="艺术文化民宿">艺术文化民宿</option>
+                                        <option value="农园民宿">农园民宿</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label " style="text-align: center" for="wtitle">民宿标题 </label>
+                                <div class="col-md-10">
+                                    <input class="form-control" type="text" id="wtitle" name="wtitle" placeholder="填写民宿标题..">
+                                </div>
+                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<div class="col-md-12">-->
+                                    <!--<div class="form-material">-->
+                                        <!--<input class="form-control" type="text" id="wtitle" name="wtitle" placeholder="填写民宿标题..">-->
+                                        <!--<label for="material-text">民宿标题</label>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" style="text-align: center" for="wimg">民宿图片 </label>
+                                <div class="col-md-10">
+                                    <input class="form-control"  id="wimg" name="wimg" placeholder="民宿图片地址..">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" style="text-align: center" for="waddress"> 民宿地址</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="waddress" name="waddress" placeholder="民宿地址">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" style="text-align: center" for="whrank"> 兑换需要的积分</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="whrank" name="whrank" placeholder="兑换需要的积分">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" style="text-align: center" for="whost"> 房东联系电话</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="whost" name="whost" placeholder="房东联系电话">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" style="text-align: center" for="wreception"> 接待时间</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="wreception" name="wreception" placeholder="接待时间">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" style="text-align: center" for="wdeadline"> 居住时间</label>
+                                <div class="col-md-10">
+                                    <input class="form-control" id="wdeadline" name="wdeadline" placeholder="居住时间">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-2 control-label" style="text-align: center" for="wdetail">民宿介绍 </label>
+                                <div class="col-md-10">
+                                    <textarea class="form-control" id="wdetail" name="wdetail" rows="14" placeholder="民宿介绍.."></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-md-2 col-md-offset-10">
+                                    <button class="btn btn-primary" type="button" id="add">添加数据</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- Bootstrap Forms Validation -->
+            </div>
+
+        </div>
+        <!-- END Forms Row -->
+
+        <!-- Terms Modal -->
+        <div class="modal fade" id="modal-terms" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-popin">
+                <div class="modal-content">
+                    <div class="block block-themed block-transparent remove-margin-b">
+                        <div class="block-header bg-primary-dark">
+                            <ul class="block-options">
+                                <li>
+                                    <button data-dismiss="modal" type="button"><i class="si si-close"></i></button>
+                                </li>
+                            </ul>
+                            <h3 class="block-title">Terms &amp; Conditions</h3>
+                        </div>
+                        <div class="block-content">
+                            <h4 class="push-10">1. <strong>General</strong></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.</p>
+                            <h4 class="push-10">2. <strong>Account</strong></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.</p>
+                            <h4 class="push-10">3. <strong>Service</strong></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.</p>
+                            <h4 class="push-10">4. <strong>Payments</strong></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ultrices, justo vel imperdiet gravida, urna ligula hendrerit nibh, ac cursus nibh sapien in purus. Mauris tincidunt tincidunt turpis in porta. Integer fermentum tincidunt auctor.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-sm btn-default" type="button" data-dismiss="modal">Close</button>
+                        <button class="btn btn-sm btn-primary" type="button" data-dismiss="modal"><i class="fa fa-check"></i> Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END Terms Modal -->
+    </div>
+
+    <!-- END Page Content -->
+
+
+<!--&lt;!&ndash; 模态框 &ndash;&gt;-->
+<!--<div class="modal fade" id="myModal">-->
+    <!--<div class="modal-dialog">-->
+        <!--<div class="modal-content">-->
+            <!--&lt;!&ndash;模态框头部：标题和关闭按钮&ndash;&gt;-->
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal">-->
+                    <!--<span>&times;</span>-->
+                <!--</button>-->
+                <!--<h4 class="modal-title">提示：</h4>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;模态框身体：提示信息&ndash;&gt;-->
+            <!--<div class="modal-body">-->
+                <!--数据添加成功！-->
+            <!--</div>-->
+            <!--&lt;!&ndash;模态框脚部：取消和确定两个按钮&ndash;&gt;-->
+            <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-primary" data-dismiss="modal" id="addsuccess">好的</button>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+</main>
+<% include footer.ejs%>

@@ -1,0 +1,94 @@
+<% include head.ejs%>
+<div class="container" style="padding-top: 10px;padding-bottom: 10px;">
+    <div clas="row">
+        <div class="col-xs-6 col-lg-8">
+                    <div>
+                    <div id="MSdetailCarousel" class="carousel slide">
+
+                    <!-- 轮播（Carousel）项目 -->
+            <div class="carousel-inner" style="height: 320px;">
+                    <div class="item active">
+                    <img src="<%= himgArr[0] %>" alt="First slide" style="height: 100%;">
+                    </div>
+                    <div class="item">
+                    <img src="<%= himgArr[1] %>" alt="Second slide" style="height: 100%;">
+                    </div>
+                    <div class="item">
+                    <img src="<%= himgArr[2] %>" alt="Third slide" style="height: 100%;">
+                    </div>
+                    <div class="item">
+                    <img src="<%= himgArr[3] %>" alt="Third slide" style="height: 100%;">
+                    </div>
+                    <div class="item">
+                    <img src="<%= himgArr[4] %>" alt="Third slide" style="height: 100%;">
+                    </div>
+                    </div>
+                    <!-- 轮播（Carousel）导航 -->
+            <a class="carousel-control left" href="#MSdetailCarousel"
+            data-slide="prev">&lsaquo;
+        </a>
+            <a class="carousel-control right" href="#MSdetailCarousel"
+            data-slide="next">&rsaquo;
+        </a>
+            </div>
+            </div>
+            <div>
+            <ul>
+            <li style="float: left;width: 20%;height: 80px;" data-target="#MSdetailCarousel" data-slide-to="0">
+                    <img src="<%= himgArr[0] %>" alt="" class="littleimg"  style="width: 100%;height: 100%;" onmouseover="this.className='hover'" onmouseout="this.className=''">
+                    </li>
+                    <li style="float: left;width: 20%;height: 80px;" data-target="#MSdetailCarousel" data-slide-to="1">
+                    <img src="<%= himgArr[1]%>" alt="" class="littleimg" style="width: 100%;height: 100%" onmouseover="this.className='hover'" onmouseout="this.className=''">
+                    </li>
+                    <li style="float: left;width: 20%;height: 80px;" data-target="#MSdetailCarousel" data-slide-to="2">
+                    <img src="<%= himgArr[2]%>" alt="" class="littleimg" style="width: 100%;height: 100%" onmouseover="this.className='hover'" onmouseout="this.className=''">
+                    </li>
+                    <li style="float: left;width: 20%;height: 80px;" data-target="#MSdetailCarousel" data-slide-to="3">
+                    <img src="<%= himgArr[3]%>" alt="" class="littleimg" style="width: 100%;height: 100%" onmouseover="this.className='hover'" onmouseout="this.className=''">
+                    </li>
+                    <li style="float: left;width: 20%;height: 80px;" data-target="#MSdetailCarousel" data-slide-to="4">
+                    <img src="<%= himgArr[4]%>" alt="" class="littleimg" style="width: 100%;height: 100%" onmouseover="this.className='hover'" onmouseout="this.className=''">
+                    </li>
+                    </ul>
+                    </div>
+                    </div>
+        <div class="col-xs-6 col-lg-4" style="padding: 0;">
+            <h3 style="margin: 20px 20px;">主题:<%= OneMSdata[0].htitle %></h3>
+            <p style="margin: 10px 20px;font-size: 18px;">类型:<%= OneMSdata[0].htype==1?'景观民宿':'' %><%= OneMSdata[0].htype==2?'温泉民宿':'' %><%= OneMSdata[0].htype==3?'海滨民宿':'' %><%= OneMSdata[0].htype==4?'农园民宿':'' %><%= OneMSdata[0].htype==5?'传统建筑民宿':'' %><%= OneMSdata[0].htype==6?'艺术文化民宿':'' %></p>
+            <p style="margin: 10px 20px;font-size: 18px;">地址：<%= OneMSdata[0].Sumaddress %></p>
+            <p style="margin: 10px 20px;font-size: 18px;">房东联系电话:<%= OneMSdata[0].hphone %></p>
+            <p style="margin: 10px 20px;font-size: 18px;">接客时间：<%= OneMSdata[0].hservetime %></p>
+            <p style="margin: 10px 20px;font-size: 18px;">剩余房间数：<%= OneMSdata[0].roomnumber%></p>
+            <input class="ithid" type="hidden" value="<%= OneMSdata[0].hid%>">
+            <button type="button" class="btn btn-reserve btn-default btn-warning" style="margin: 10px 20px" value="<%= OneMSdata[0].roomnumber%>">立即预定</button>
+        </div>
+    </div>
+
+</div>
+<div class="container">
+    <p style="margin: 10px;font-size: 18px;">民宿介绍：</p>
+    <p style="margin: 10px;font-size: 18px;"><%= OneMSdata[0].hdetail %></p>
+</div>
+<div class="modal fade" id="reserve-mdl">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--模态框头部：标题和关闭按钮-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button>
+                <h4 class="nextmodal-title">立即预定？</h4>
+            </div>
+            <!--模态框身体：提示信息-->
+            <div class="modal-body next">
+                <p class="mdl-text"></p>
+            </div>
+            <!--模态框脚部：取消和确定两个按钮-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-cancle" data-dismiss="modal" >取消</button>
+                <button type="button" class="btn btn-info btn-sure" data-dismiss="modal" value="<%=userse?userse.uid:''%>">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
+<% include footer.ejs%>

@@ -1,0 +1,265 @@
+/**index.wxss**/
+.container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+
+/*轮播图  */
+.swip-group{
+}
+.slide-image{
+  width:100%;
+}
+
+
+
+/*热门目的地民宿模块  */
+.hot-place-title{
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+.text-h1{
+  color: #FB3C3C;
+  margin-bottom: 7px;
+  font-size: 45rpx;
+}
+.title-box{
+  height: 68rpx;
+  width: 45%;
+  border: 3px solid rgba(111,184,142,0.5);
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+}
+.title-box .title-text1{
+  font-size: 32rpx;
+  position: absolute;
+  top: -30rpx;
+  color: #FE4446;
+  background-color: #fff;
+  letter-spacing: 1px;
+
+}
+.title-box .title-text2{
+  font-size: 26rpx;
+  color: #004445;
+}
+
+
+.modul-container{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/*省份市区选择  */
+.place-select{
+  display: flex;
+  height: 80rpx;
+  z-index: 10;
+  background-color: #fff;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 8rpx;
+  /* box-shadow: 0px 1px 1px 1px #ddd; */
+  font-size: 10pt;
+  color: #bdbdbd;
+}
+.place-select .place-select-btn{
+  text-align: center;
+  width: 30%;
+  border-right:1px solid  #bdbdbd;
+}
+
+.place-select .place-select-text{
+  text-align: center;
+  width: 60%;
+  border-right:1px solid  #bdbdbd;
+}
+.place-select .place-select-search{
+  text-align: center;
+  width: 10%;
+}
+.dialog-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index:12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+/*分类  */
+.navbar{  
+  flex: none;
+  margin-top: 5px;  
+  display: flex;  
+  background: #fff;  
+}
+.navbar .item{  
+  position: relative;  
+  flex: auto;  
+  text-align: center;  
+  line-height: 60rpx;  
+  font-size:14px;
+  color: #004445;
+}
+/* 顶部分类导航字体颜色 */
+.navbar .item.active{  
+   color: #FB3C3C;
+}
+/* 顶部指示条属性 */
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 5rpx;  
+  background: #e1007e;  
+  width: 70%;
+  margin: 0px auto;
+}
+
+.hp-img{
+  width: 100%;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 5px;
+  position: relative;
+}
+.hp-img image{
+  width: 100%;
+  height: 100%;
+   border-radius: 5px;
+   position: absolute;
+} 
+.hp-img .hp-img-text{
+  position: absolute;
+  font-size: 20px;
+  background-color: rgb(255,255,255);
+  color: #222;
+  padding: 2px;
+  opacity:0.5;
+}
+ .hp-img .hp-img-hot{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 13px;
+    padding: 2px;
+    background-color: #00b09b;
+ }
+
+ /*首页故事分享模块*/
+ .stroy-list{
+   width: 100%;
+   /* padding-left: 3px;
+   padding-right:3px; */
+   display: flex;
+   margin-top:5px; 
+   flex-direction:column;  
+ }
+ .stroy-list .stroy-item{
+   width: 100%;
+   height: 140px;
+   display: flex;
+   flex-direction:row; 
+   border-top: 1px solid rgba( 0,68,69,0.4);
+   border-bottom: 1px solid rgba( 0,68,69,0.4);
+   margin-bottom: 10px;
+   color: #555;
+ }
+ .stroy-list .stroy-item .item-left-img{
+   height: 100%;
+   width: 35%;
+ }
+ .stroy-list .stroy-item .stroy-content{
+   width: 65%;
+   display: flex;
+   flex-direction: column;
+   margin-left: 7px;
+   margin-top: 7px;
+ }
+ .stroy-content .stroy-user-top{
+   display: flex;
+   flex-direction: row;
+ }
+.stroy-content .stroy-user-top image{
+   width: 50px;
+   height: 47px;
+   border-radius: 50%;
+ }
+  .stroy-content .stroy-user-top .stroy-user-top-right{
+    display: flex;
+    flex-direction: column;
+     margin-left: 10px;
+  }
+ .stroy-content .stroy-user-top .stroy-user-top-right .text1{
+   font-size: 12px;
+ }
+  .stroy-content .stroy-user-top .stroy-user-top-right .text2{
+   font-size: 11px;
+ }
+  .stroy-content .stroy-user-bottom{
+    height: 65px;
+    padding: 3px;
+    overflow: hidden;
+    font-size: 13px;
+  }
+  .welfare-list{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .welfare-list .welfare-item{
+    display: flex;
+    flex-direction:column;
+    width: 50%;
+     margin-left:5px;
+    margin-right: 5px; 
+     border:1px solid rgba(0,68,69,0.4); 
+     
+  }
+  .welfare-list .welfare-item image{
+    height: 150px;
+    width: 100%;
+  } 
+  .welfare-list .welfare-item .welfare-item-text{
+    display: flex;
+    height: 40px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    text-align: center;
+    color: #004445;
+   
+  }

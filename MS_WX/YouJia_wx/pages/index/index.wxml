@@ -1,0 +1,116 @@
+
+<view class='container'>
+    <!--轮播图块模块  -->
+    <swiper class="swiper swip-group" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="#fff">    
+      <block wx:for="{{imgUrls}}" wx:key="index">    
+        <swiper-item>    
+          <image src="{{item}}" class="slide-image"/>    
+        </swiper-item>    
+      </block>    
+    </swiper>
+  
+
+    <!--热门目的地民宿模块  -->
+    <view class="hot-place-container">
+      <view class="hot-place-title">
+          <text class="text-h1">POPULAR DESTINATION</text>
+          <view class="title-box">
+            <view class="title-text1">热门目的地民宿</view>
+            <view class="title-text2">玩转天下民宿</view>
+          </view>
+      </view>
+    </view>
+
+    <!-- 分类模块 -->
+  <view class="navbar">
+    <text wx:for="{{navbar}}" data-idx="{{index}}"  class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}
+    </text>
+  </view>
+ 
+  <view class="modul-container">
+    <!--热门地图片  -->
+    <view class="hp-img" wx:for="{{hpInfo}}" wx:key="" bindtap='hpselectTap' data-city='{{item.city}}'>
+      <image src='{{item.img}}'></image>
+      <view class="hp-img-text">{{item.name}}</view>
+      <view class="hp-img-hot">热门</view>
+    </view>
+     <!--省份地区选择-->
+    <view class="place-select">
+      <view class="place-select-btn" bindtap="selectDistrict">更多城市选择</view>
+      <view class="place-select-text">{{areaInfo}}</view>
+      <view class="place-select-search" bindtap='searchPlace'><icon type="search" size="16" color="#bdbdbd"/></view>
+    </view>
+    <view class="dialog-mask " style="z-index:11;visibility:{{addressMenuIsShow ? 'visible': 'hidden'}}" bindtap="hideCitySelected">
+    <!--城市三级联动-->
+    <!--使用动画时不能wx:if="{{city.length>0&&isVisible}}" ，不能hidden=''属性否则无动画效果-->
+      <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+        <view style="height:10% ;width:95%;margin-top:10rpx">
+          <text catchtap="cityCancel">取消</text>
+          <text style="float: right" catchtap="citySure">确定</text>
+        </view>
+      <!--"可以显示默认的城市，使用后级联选择城市反应很慢就不使用了-->
+        <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+            <picker-view-column>
+              <view wx:for="{{provinces}}" wx:key="" class="picker-item">
+                {{item.name}}
+              </view>
+            </picker-view-column>
+            <picker-view-column>
+              <view wx:for="{{citys}}" class="picker-item" wx:key="">
+                {{item.name}}
+              </view>
+            </picker-view-column>
+        </picker-view>
+      </view>
+    </view>
+  </view> 
+
+  <!--故事分享模块  -->
+    <view class="hot-place-container">
+      <view class="hot-place-title">
+          <text class="text-h1">STORY SHARING</text>
+          <view class="title-box">
+            <view class="title-text1">故事分享</view>
+            <view class="title-text2">每一间民宿都有一个故事</view>
+          </view>
+      </view>
+    </view>
+
+    <view class="stroy-list">
+      <view class="stroy-item" wx:for="{{storyInfo}}" wx:key="" bindtap='stroyTap' data-tid='{{item.tid}}' data-cuid='{{item.cuid}}'>
+        <image src="{{item.apic[0]}}" class="item-left-img"></image>
+        <view class="stroy-content">
+          <view class='stroy-user-top'>
+             <image src="{{item.apic[1]}}"></image>
+             <view class='stroy-user-top-right'>
+                <text class='text1'>{{item.title}}</text>
+                <text class='text2'>作者：{{item.author}}</text>
+             </view>
+          </view>
+           <view class='stroy-user-bottom'>
+            <text>{{item.acontent}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <!--故事分享模块  -->
+    <view class="hot-place-container">
+      <view class="hot-place-title">
+          <text class="text-h1">WELFARE C0MMUNITY</text>
+          <view class="title-box">
+            <view class="title-text1">福利社区</view>
+            <view class="title-text2">免费民宿等你来体验</view>
+          </view>
+      </view>
+    </view>
+
+    <view class="welfare-list">
+      <view class='welfare-item' wx:for="{{welfareInfo}}" wx:key="" bindtap='welfareTap' data-wid='{{item.wid}}'>
+          <image src='{{item.whpic[2]}}'></image>
+          <view class='welfare-item-text'>
+             {{item.whtitle}}
+          </view>
+      </view>
+    </view>
+</view>

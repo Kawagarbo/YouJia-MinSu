@@ -1,0 +1,44 @@
+
+ .topbar{
+    position: relative;
+    top:30px;width: 80%;
+    text-align: center;
+    margin:0 auto;
+    background-color:  #ecf2f4;
+}
+
+ .container .hot-place-title{
+     border: 5px solid #FDA1B1;
+     padding: 30px;
+ }
+ .bottombar{
+     position: relative;
+     top:-30px;width: 80%;
+     height:50px;
+     text-align: center;
+     margin:0 auto;
+     background-color:  #ecf2f4;
+ }
+ .MSinfo-container .itembox{
+     margin: 15px 0px;
+     cursor: pointer;
+ }
+ .MSinfo-container .itembox .thumbnail{
+     padding: 0px;
+     margin: 0px;
+
+ }
+ .MSinfo-container .itembox .thumbnail .img-box{
+     overflow: hidden;
+ }
+ .MSinfo-container .itembox .thumbnail .img-box img{
+     width: 100%;
+     height: 330px;
+     transition: all 0.6s;
+ }
+ .MSinfo-container .itembox .thumbnail .img-box img:hover{
+     transform: scale(1.2);
+ }
+ .MSinfo-container .itembox .thumbnail .caption{
+     text-align: center;
+ }

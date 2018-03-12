@@ -1,0 +1,84 @@
+<% include head.ejs%>
+<div class="container" >
+    <!--头部-->
+    <div class="row topbar">
+        <h1><%= hotPlace[0].title %></h1>
+    </div>
+    <div class="row hot-place-title">
+        <div class="col-lg-7" style="margin-top: 20px">
+            <%= hotPlace[0].introduce %>
+        </div>
+            <div class="col-lg-5">
+                <img class="img-responsive" src="<%= hotPlace[0].img %>">
+            </div>
+
+    </div>
+
+    <div class="row bottombar">
+    </div>
+<!--民宿内容块-->
+    <div class="MSinfo-container">
+        <div class="row" >
+            <% for(var i=0;i<minsuData.length;i++){ %>
+                <div class="col-xs-12 col-md-6 col-lg-6 col-sm-6 itembox" data-hid="<%= minsuData[i].hid %>" style="margin: 15px 0px">
+                    <div class="thumbnail" style="padding: 0px;margin: 0px">
+                        <div class="img-box">
+                            <img src="<%= Arr1[i][0]%>" alt="" style="width: 100%;height: 330px">
+                        </div>
+                        <div class="caption" style="text-align: center">
+                            <h3><%= minsuData[i].htitle %></h3>
+                            <p></p>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            <% }%>
+        </div>
+
+    </div>
+
+    <!--分页-->
+
+            <nav aria-label="Page navigation" style="text-align: center">
+                <ul class="pagination pagination-lg">
+                    <% if($page==1){ %>
+                    <li class="disabled">
+                        <a href="javascript:void(0)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;上一页</span>
+                        </a>
+                    </li>
+                   <% }else{ %>
+                    <li>
+                        <a href="hotplace?place=<%=hotPlace[0].name%>&&$page=<%=$page-1%>" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;上一页</span>
+                        </a>
+                    </li>
+                   <% } %>
+
+                    <% for($i=1;$i<=$totalpage;$i++){ %>
+                    <li>
+                        <a href="hotplace?place=<%=hotPlace[0].name%>&&$page=<%= $i%>">
+                            <%= $i%>
+                        </a>
+                    </li>
+                    <% } %>
+                    <% if($page==$totalpage){ %>
+                        <li class="disabled">
+                            <a href="javascript:void(0)" aria-label="Next">
+                                <span aria-hidden="true">下一页&raquo;</span>
+                            </a>
+                        </li>
+                    <% }else{ %>
+                    <li>
+                        <a href="hotplace?place=<%=hotPlace[0].name%>&&$page=<%=$page-(-1)%>" aria-label="Next">
+                            <span aria-hidden="true">下一页&raquo;</span>
+                        </a>
+                    </li>
+                    <% } %>
+
+
+                </ul>
+            </nav>
+
+</div>
+<% include footer.ejs%>

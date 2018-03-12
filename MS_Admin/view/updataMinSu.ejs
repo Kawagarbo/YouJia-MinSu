@@ -1,0 +1,165 @@
+<% include head.ejs%>
+<main id="main-container">
+    <div class="row">
+        <div class="col-xs-12">
+            <!-- Default Elements -->
+            <div class="block">
+                <div class="block-header">
+                    <ul class="block-options">
+                        <li>
+                            <button type="button"><i class="si si-settings"></i></button>
+                        </li>
+                    </ul>
+                    <h3 class="block-title">修改民宿信息操作</h3>
+                </div>
+                <div class="block-content block-content-narrow">
+                    <% for(var i=0;i<Data.length;i++){ %>
+                    <form class="form-horizontal" action="base_forms_elements.html"  enctype="multipart/form-data" onsubmit="return false;">
+                        <input id="data-hid" value="<%= Data[i].hid %>" type="hidden">
+                        <div class="form-group">
+                            <label class="col-xs-12" for="example-text-input">民宿主题</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" type="text" id="example-title-input" name="example-title-input" placeholder="主题..." value="<%= Data[i].htitle%>">
+                                <div class="help-block">输入在网站显示的民宿标题</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-12" for="example-text-input">民宿所在地址</label>
+                            <div class="col-sm-9">
+                                <p><%= Data[i].Sumaddress %></p>
+                                <div class="help-block">修改地址</div>
+                                <div class="form-group">
+                                    <div data-toggle="distpicker" id="distpicker" class="col-xs-12" style="margin-bottom: 15px"><!-- container -->
+
+                                        <div class="col-xs-3" style="padding: 0px;text-align: center">
+                                            <select id="provinceName" name="provinceName" class="form-control"></select><!-- 省 -->
+                                        </div>
+                                        <div class="col-xs-3" style="padding: 0px">
+                                            <select id="cityName" name="cityName" class="form-control"></select><!-- 市 -->
+                                        </div>
+                                        <div class="col-xs-3" style="padding: 0px">
+                                            <select id="areaName" name="areaName" class="form-control"></select><!-- 区 -->
+                                        </div>
+                                        <div class="help-block">请选择省市区</div>
+
+                                    </div>
+
+
+                                    <div class="col-xs-7">
+                                        <input class="form-control" type="text" id="example-address-detail-input" name="example-address-detail-input" placeholder="详细地址...">
+                                        <div class="help-block">请输入精准的民宿的详细地址</div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-xs-12" for="example-text-input">订购联系方式</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" type="text" id="example-phone-input" name="example-phone-input" placeholder="电话..." value="<%= Data[i].hphone%>">
+                                <div class="help-block">请输入能订购民宿的联系方式</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12" for="example-select">选择民宿类型</label>
+                            <div class="col-sm-9">
+                                <select class="form-control" id="example-type-select" name="example-type-select" size="1">
+                                    <option  value="0" <%= Data[i].htype==0? 'selected': '' %>>Please select</option>
+                                    <option  value="1" <%= Data[i].htype==1? 'selected': '' %>>景观民宿</option>
+                                    <option  value="2" <%= Data[i].htype==2? 'selected': '' %>>温泉民宿</option>
+                                    <option  value="3" <%= Data[i].htype==3? 'selected': '' %>>海滨民宿</option>
+                                    <option  value="4" <%= Data[i].htype==4? 'selected': '' %>>农园民宿</option>
+                                    <option  value="5" <%= Data[i].htype==5? 'selected': '' %>>传统建筑民宿</option>
+                                    <option  value="6" <%= Data[i].htype==6? 'selected': '' %>>艺术文化民宿</option>
+                                </select>
+                                <div class="help-block">选择民宿的类型</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12" for="example-servertime">输入接待时间</label>
+                            <div class="col-sm-9">
+                                <input class="form-control" type="text" id="example-servertime" name="example-servertime" placeholder="接待时间..." value="<%= Data[i].hservetime %>">
+                                <div class="help-block">请输入民宿接待游客的准确时间</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-12" for="note-image-input">选择民宿的图片</label>
+                            <div class="col-xs-12">
+                                <input class="note-image-input" type="file" name="imgfiles[]" accept="image/*" multiple="multiple">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12" for="note-image-url">上传图片的URL</label>
+                            <div class="col-xs-12">
+                                <textarea class="form-control" id="note-image-url" name="note-image-url" rows="3" placeholder="描述..."><%= Data[i].himg %></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-xs-12" for="example-textarea-input">民宿详细描述</label>
+                            <div class="col-xs-12">
+                                <textarea class="form-control" id="example-textarea-input" name="example-textarea-input" rows="6" placeholder="描述..."><%= Data[i].hdetail %></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-xs-12" for="example-keywords-input">民宿搜索的关键字</label>
+                            <div class="col-xs-10">
+                                <textarea class="form-control" id="example-keywords-input" name="example-textarea-input" rows="3" placeholder="描述..."><%= Data[i].hkeywords %></textarea>
+                                <div class="help-block">请输入用来搜索民宿的关键字，各个关键字间用空格隔开</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <button class="btn btn-sm btn-primary" type="button" id="updatabtn">确认修改</button>
+                            </div>
+                        </div>
+                    </form>
+                    <% } %>
+
+                </div>
+            </div>
+            <!-- END Default Elements -->
+        </div>
+    </div>
+    <!--模态框组-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="mymodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改成功</h4>
+                </div>
+                <div class="modal-body">
+                    <p>你已经成功修改了一条民宿数据,点击关闭按钮关闭，点击立即查看可以查看刚才修改的信息&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="lookbtn">立即查看</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="errormodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">修改失败</h4>
+                </div>
+                <div class="modal-body">
+                    <p>所有数据都为必填数据&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</main>
+<% include footer.ejs%>

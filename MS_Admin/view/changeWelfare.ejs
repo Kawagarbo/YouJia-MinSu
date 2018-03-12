@@ -1,0 +1,127 @@
+<% include head.ejs%>
+<main id="main-container">
+    <!-- Page Content -->
+    <div class="content content-narrow">
+        <!-- Material Design -->
+        <h2 class="content-heading" style="font-size:25px;">修改民宿信息</h2>
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Static Labels -->
+                <div class="block">
+                    <div class="block-content block-content-narrow">
+                        <form class="form-horizontal push-10-t" action="base_forms_elements_modern.html" method="post" onsubmit="return false;">
+                            <% {orgindata.forEach(function (data){%>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="form-material">
+                                        <input class="form-control" type="text" id="whtitle" name="whtitle" value="<%=data.whtitle%>">
+                                        <label for="material-text">民宿名字</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="form-material">
+                                        <select class="form-control" id="wkeywords" name="wkeywords" size="1">
+                                            <option><%=data.wkeywords%></option>
+                                            <option value="传统建筑民宿" name="types">传统建筑民宿</option>
+                                            <option value="海滨民宿">海滨民宿</option>
+                                            <option value="景观民宿">景观民宿</option>
+                                            <option value="温泉民宿">温泉民宿</option>
+                                            <option value="艺术文化民宿">艺术文化民宿</option>
+                                            <option value="农园民宿">农园民宿</option>
+                                            </select>
+                                        <label for="material-select">民宿类型</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <div class="form-material">
+                                        <input class="form-control"  id="waddress" name="waddress" value="<%=data.waddress%>">
+                                        <label for="material-password">民宿地址</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material">
+                                        <input class="form-control"  id="whrank" name="whrank" value="<%=data.whrank%>">
+                                        <label for="material-email">兑换需要的积分</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material">
+                                        <input class="form-control" id="whostphone" name="whostphone" value="<%=data.whostphone%>">
+                                        <label for="material-email">房东联系电话</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material">
+                                        <input class="form-control"  id="wdeadline" name="wdeadline" value="<%=data.wdeadline%>">
+                                        <label for="material-email">入住时间</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material">
+                                        <input class="form-control"  id="wreceptiontime" name="wreceptiontime" value="<%=data.wreceptiontime%>">
+                                        <label for="material-email">接待时间</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material">
+                                        <div class="form-group" style="height:250px;width:500px;">
+                                            <img src="<%=data.whpic%>" alt="" style="height:250px;width:500px;border:1px solid gray;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <div class="form-material">
+                                        <div class="form-material">
+                                            <input class="form-control" id="whpic" name="whpic" value="<%=data.whpic%>">
+                                            <label for="material-password">图片地址</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <div class="form-material">
+                                        <textarea class="form-control" id="whdet" name="whdet" rows="8" placeholder=""><%=data.whdet%></textarea>
+                                        <label for="material-textarea-large">民宿描述</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-3 col-sm-push-9">
+                                    <button class="btn btn-sm btn-primary subchange" type="button" wid="<%=data.wid%>">提交修改</button>
+                                    <button class="btn btn-sm btn-primary backAllwelfare" type="button">返回主页</button>
+                                </div>
+                            </div>
+                        </form>
+                        <%})}%>
+                    </div>
+                </div>
+                <!-- END Static Labels -->
+            </div>
+        </div>
+
+    </div>
+    <!-- END Page Content -->
+</main>
+
+
+
+
+<% include footer.ejs%>

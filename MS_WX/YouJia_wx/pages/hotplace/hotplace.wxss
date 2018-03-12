@@ -1,0 +1,40 @@
+/* pages/hotplace/hotplace.wxss */
+.minsu-list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.minsu-list .minsu-item{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 120px;
+  border: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+.minsu-item .item-left{
+  width: 35%;
+  height: 100%;
+}
+.minsu-item .item-right{
+  width: 65%;
+  display: flex;
+  margin-left:10px; 
+  flex-direction: column;
+  color: #666;
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+}
+.minsu-item .item-right .text-title{
+  font-size: 15px;
+  color: #333;
+  margin-top: 5px;
+}
+.minsu-item .item-right .text{
+font-size: 12px;
+margin-top: 3px;
+margin-bottom: 3px;
+
+}

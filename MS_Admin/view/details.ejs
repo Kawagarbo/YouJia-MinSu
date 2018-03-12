@@ -1,0 +1,87 @@
+<% include head.ejs%>
+<main id="main-container">
+    <!-- Page Header -->
+   <%
+   detailsData.forEach(function (details) {
+   %>
+        <div class="content bg-image" style="background-image: url('assets/img/photos/photo8@2x.jpg');">
+            <div class="push-50-t push-15 clearfix">
+                <div class="push-15-r pull-left animated fadeIn">
+                    <img class="img-avatar img-avatar-thumb" src="assets/img/avatars/avatar13.jpg" alt="">
+                </div>
+                <% userData.forEach(function (userdatas) {%>
+                <h1 class="h2 text-white push-5-t animated zoomIn"><%=userdatas.username %></h1>
+                <h2 class="h5 text-white-op animated zoomIn"><%=userdatas.email%></h2>
+                <%})%>
+            </div>
+        </div>
+
+        <!-- END Page Header -->
+
+        <!-- Stats -->
+        <div class="content bg-white border-b">
+            <div class="row items-push text-uppercase">
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">点赞数</div>
+                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)"><%=details.praisenum%></a>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">评论数</div>
+                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)"><%=commentData.length%></a>
+                </div>
+                <div class="col-xs-6 col-sm-3">
+                    <div class="font-w700 text-gray-darker animated fadeIn">图片数</div>
+                    <a class="h2 font-w300 text-primary animated flipInX" href="javascript:void(0)"><%=commentData.length%></a>
+                </div>
+            </div>
+        </div>
+        <!-- END Stats -->
+    <!-- Frequently Asked Questions -->
+    <div class="block">
+        <div class="block-content block-content-full block-content-narrow">
+            <!-- Introduction -->
+            <h2 class="h3 font-w600 push-30-t push"><%=details.title%></h2>
+            <div id="faq1" class="panel-group">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a class="accordion-toggle">文章详情</a>
+                        </h3>
+                    </div>
+                    <div class="panel-collapse">
+                        <div class="panel-body">
+                            <p><%=details.acontent%></p>
+                            <% var imgs=details.apic.split('&&');
+                            for(var i=0;i<imgs.length;i++){
+							%>
+                            <img src="<%=imgs[i]%>" class="img-responsive">
+                            <%}%>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#faq1" href="#faq1_q2">评论详情</a>
+                        </h3>
+                    </div>
+                    <div id="faq1_q2" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <% commentData.forEach(function (item) {%>
+                            <p><%=item.comments%></p>
+                            <p>-----<%=item.reply%></p>
+                            <%})%>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- END Introduction -->
+        </div>
+    </div>
+    <%})%>
+    <!-- END Frequently Asked Questions -->
+
+</main>
+
+<% include footer.ejs%>

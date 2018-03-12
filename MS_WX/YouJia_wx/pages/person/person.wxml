@@ -1,0 +1,34 @@
+<!--pages/person/person.wxml-->
+<view class="container">
+  <view class="userinfo box1">
+    <button class='btn-getuser' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" size='mini'> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <view class='box1-in1'>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+        <view bindtap='tomyinfo' size='mini' class='btn-perinfo'>完善个人资料</view>
+      </view>
+      
+    </block>
+     
+    <view bindtap='towriteart' size='mini' class='btn-write'>发表文章</view>
+  </view>
+  <view class='box2'>
+    <view class='box2-in2' bindtap='toreserve'>
+      <image class='in2-img' src='../../img/icon/sc.png'></image>
+      <view class='in2-text'>我的预约</view>
+    </view>
+    <view class='box2-in2' bindtap='toartlist'>
+      <image class='in2-img' src='../../img/icon/wz.png'></image>
+      <view class='in2-text'>我的文章</view>
+    </view>
+    <view class='box2-in2' bindtap='topoints'>
+      <image class='in2-img' src='../../img/icon/jf.png'></image>
+      <view class='in2-text'>我的积分</view>
+    </view>
+    <view class='box2-in2' bindtap='toweal'>
+      <image class='in2-img' src='../../img/icon/fl.png'></image>
+      <view class='in2-text'>我的福利</view>
+    </view>
+  </view>
+</view>

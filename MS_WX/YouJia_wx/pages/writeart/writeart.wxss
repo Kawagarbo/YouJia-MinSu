@@ -1,0 +1,48 @@
+/* pages/writeart/writeart.wxss */
+page{
+ background-color: rgba(245,245,245,0.3);
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.infobox{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.form-list{
+  width: 100%;
+  height: 70rpx;
+  align-items: center;
+  margin: 20rpx 0;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  padding: 2px 4px;
+}
+.form-list2{
+  width: 100%;
+  height: 300rpx;
+  align-items: center;
+  margin: 20rpx 0;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.form-list2 label{
+ width: 100%;
+ height: 70rpx;
+}
+.form-list input{
+  margin-left: 20rpx;
+}
+
+.lable{
+  font-size: 14px;
+  color:#333;
+}

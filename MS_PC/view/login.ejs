@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="../js/login.js"></script>
+</head>
+<body>
+<div class="container">
+    <a class="backhome" href="index"><i class="glyphicon glyphicon-menu-left">返回首页</i></a>
+    <div class="row">
+        <div class="col-md-6 col-md-push-3 login">
+            <form>
+                <div class="form-group">
+                    <input id="urlnow1" type="hidden" value="<%= urlnow?urlnow:''%>">
+                    <label for="name">帐户:</label>
+                    <input type="text" class="form-control" name="username" id="name" placeholder="请输入帐户">
+                </div>
+                <div class="form-group">
+                    <label for="pwd">密码:</label>
+                    <input type="password" class="form-control" name="passwd" id="pwd" placeholder="请输入密码">
+                </div>
+                <a class="forgetpwd" href="findpwd">忘记密码？</a>
+                <button id="btn-login" type="button" class="btn btn-primary btn-block">登录</button>
+                <button id="btn-toreg" type="button" class="btn btn-primary btn-block">注册</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

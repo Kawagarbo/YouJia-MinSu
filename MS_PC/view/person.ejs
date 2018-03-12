@@ -1,0 +1,78 @@
+<% include head.ejs%>
+<!--内容块-->
+<body class="bodyper">
+<div class="container">
+    <div class="row">
+        <div class="wrapper">
+            <div class="userinfo">
+                <div class="media headinfo">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object headimg" src="img/view1.jpg" alt="背景">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><%=userse.username%></h4>
+                        <a href="personinfo" id="personinfo">
+                            <i class="glyphicon glyphicon-cog">编辑个人资料</i>
+                        </a>
+                        <button class="btn-write btn btn-info">
+                            <i class="glyphicon glyphicon-pencil">发表文章</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="personcontent">
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="person">我的预约</a></li>
+                <li role="presentation"><a href="myarticle">我的文章</a></li>
+                <li role="presentation"><a href="userpoint">我的积分</a></li>
+                <li role="presentation"><a href="myboon">我的福利</a></li>
+            </ul>
+            <div class="detail1">
+                   <% if(reserver.length==0){%>
+                     <i class="glyphicon glyphicon-star">还没有预定</i>
+                   <%}
+                   else{ %>
+                      <div class="row">
+                       <%for(var i=0;i<reserver.length;i++){%>
+                            <div class="col-sm-6 col-md-4 listminsu">
+                                <div class="thumbnail">
+                                      <img src="<%=imglist[i][0]%>" alt="民宿图">
+                                    <div class="caption">
+                                        <h4>我预约的民宿：</h4>
+                                        <p><%=reserver[i].htitle%></p>
+                                        <p>
+                                            <a href="hotplaceMSdetails?hid=<%=reserver[i].hid%>" class="btn btn-primary" role="button">查看详情</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        <%}%>
+                      </div>
+                    <%}%>
+            </div>
+            <!--<div class="detail2">-->
+                <!--<i class="glyphicon glyphicon-pencil">还没有发表文章</i>-->
+            <!--</div>-->
+            <!--<div class="detail3">-->
+                <!--<h5>-->
+                    <!--<i class="glyphicon glyphicon-plus">积分规则</i>-->
+                <!--</h5>-->
+                <!--<ul class="pointlist">-->
+                    <!--<li>1、登录：每日20积分</li>-->
+                    <!--<li>2、发表文章：200积分（审核通过才可获取积分）</li>-->
+                    <!--<li>3、点评文章：10积分（单日限制3次，超过限制次数不再获取积分）</li>-->
+                    <!--<li>4、收藏旅社：5积分（单日限制3次，超过限制次数不再获取积分）</li>-->
+                    <!--<li>5、旅行预定：20积分（单日限制3次，超过限制次数不再获得积分）</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+            <!--<div class="detail4">-->
+                <!--<i class="glyphicon glyphicon-grain">还没有兑换福利</i>-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+</body>
+<% include footer.ejs%>

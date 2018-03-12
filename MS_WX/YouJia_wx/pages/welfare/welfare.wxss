@@ -1,0 +1,192 @@
+/* pages/welfare/welfare.wxss */
+.container{
+  height:100%;
+  width:100%;
+
+}
+.marge{
+  height:100rpx;
+  width:100%;
+  font-size: 18px;
+  color: #E62739;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 1px solid #ccc;
+}
+.welfare-list{
+
+}
+.welfare-item{
+  display: flex;
+  flex-direction: column;
+}
+.welfare-item-top{
+  display: flex;
+  flex-direction:row; 
+  padding: 3Px 0px 3px 5px;
+}
+.welfare-item-top .icon{
+
+}
+.welfare-item-top .icon-text{
+  margin-left: 8px;
+  font-size: 16px;
+  color: #555;
+}
+.welfare-item-bottom{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 130px;
+  margin-bottom: 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+.welfare-item-bottom image{
+width: 30%;
+height: 100%;
+}
+.welfare-item-bottom .content{
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-left: 8px;
+  
+}
+.content-title{
+  font-size: 15px;
+  color: orange;
+}
+.content-text{
+  margin: 2px 2px;
+font-size: 12px;
+color: #444;
+}
+.content .content-btn{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.content-btn .oldprice{
+  width: 30%;
+ font-size: 14px;
+  color: #555;
+  padding: 3px;
+  background-color: rgba( 220,220,220, 0.2);
+  text-decoration:line-through; 
+  text-align: center;
+}
+.content-btn .duihuanbtn{
+  text-align: center;
+  width: 30%;
+  font-size: 14px;
+  color: #555;
+  padding: 3px;
+  position: absolute;
+  right: 8px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 0px #7A9D96;
+   background-color: rgba( 230,39,57, 0.4); 
+}
+/* .welfare{
+  display:flex;
+  flex-wrap: wrap;
+  margin-top:30rpx;
+   background-color: white;
+}
+.welfareimg{
+  display:flex;
+  width:30%;
+  height:250rpx;
+  margin-right:20rpx;
+  border-right:1rpx solid gray;
+}
+.innerimg{
+   height:250rpx;
+   width:100%;
+}
+.welfaredata{
+  display:flex;
+  height:250rpx;
+  width:60%;
+  flex-wrap: wrap;
+}
+.title{
+   display:flex;
+   width:100%;
+   font-size: 15px;
+   color:orange;
+}
+.address{
+   display:flex;
+   width:100%;
+   height:30%;
+   margin-top: 20rpx;
+   font-size: 12px;   
+}
+.rank{
+   display:flex;
+   width:50%;
+   height:35%;
+   flex-wrap: wrap;
+   font-size: 12px;
+}
+.ranktitle{
+   display:flex;
+   width:50%;
+}
+.rankcontent{
+    display:flex;
+   width:50%;
+}
+.orgincontent{
+    text-decoration:line-through;
+    color:orangered;
+}
+.mybutton{
+   display:flex;
+   width:49%;
+} 
+.mini{
+  height:60rpx;
+}
+.top-xian{
+  display:flex;
+  width:100%; 
+}
+.group{
+   display:flex;
+   width:10%;
+   height:70rpx;
+}
+.thistitle{
+ height:70rpx;
+ width:80%;
+ font-size:16px;
+}
+.bottom-xian{
+   display:flex;
+   width:100%;
+   height:70rpx;
+   margin-top:10rpx;
+   border-top: 1rpx solid gray;  
+}
+.type{
+   display:flex;
+   width:75%;
+   font-size: 14px;
+   line-height: 70rpx;
+}
+.lookdetail{
+   display:flex;
+   width:25%;
+   font-size: 14px;
+   color:skyblue;
+   line-height: 70rpx;
+} */
+.imbottom{
+  width:100%;
+  text-align: center;
+  font-size: 18px;
+}

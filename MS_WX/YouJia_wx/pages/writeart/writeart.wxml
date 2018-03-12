@@ -1,0 +1,24 @@
+<!--pages/writeart/writeart.wxml-->
+<view class='container'>
+   <view class='infobox'>
+      <form bindsubmit='writeart'>
+        <view class='form-list'>
+          <label class='lable'>标题:</label>
+          <input type='text' name='title'></input>
+        </view>
+        <view class='form-list'>
+          <label class='lable'>作者:</label>
+          <input type='text' placeholder='' name='author'></input>
+        </view>
+        <view class='form-list2'>
+          <label class='lable'>内容:</label>
+          <textarea name='content' maxlength='500'></textarea>
+        </view>
+        <view class='form-list'>
+          <label class='lable'>关键字:</label>
+          <input type='text' placeholder='' name='keyword'></input>
+        </view>
+         <button class='form-list' type='warn' size='mini' form-type='submit'>发表</button>
+      </form>
+    </view>
+</view>

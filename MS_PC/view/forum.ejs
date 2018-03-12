@@ -1,0 +1,66 @@
+<% include head.ejs%>
+
+<link rel="stylesheet" href="css/forum.css">
+<div class="container">
+<div class="row">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active" onclick="changeView(this)" data-keys="美食"><a href="#cate" aria-controls="cate" role="tab" data-toggle="tab">美食</a></li>
+        <li role="presentation" onclick="changeView(this)" data-keys="城市"><a href="#city" aria-controls="city" role="tab" data-toggle="tab">城市</a></li>
+        <li role="presentation" onclick="changeView(this)" data-keys="景点"><a href="#scenic" aria-controls="scenic" role="tab" data-toggle="tab">景点</a></li>
+        <li role="presentation" onclick="changeView(this)" data-keys="文化"><a href="#culture" aria-controls="culture" role="tab" data-toggle="tab">文化</a></li>
+    </ul>
+
+
+    <!--End Nav tabs -->
+    <!-- Tab panes -->
+
+    <div class="tab-content items">
+        <div role="tabpanel" class="tab-pane fade in active " id="cate">
+            <div class="row box">
+<%
+forumData.forEach(function (cate) {
+var imgs=cate.apic.split('&&');
+var keys=cate.akeywords.split('&&');
+%>
+                <div class="col-sm-3 col-md-4">
+                    <div class="imgs" style="position: relative;">
+                        <img src="<%=imgs[0]%>" alt="" class="imgopacity pre">
+
+                        <p class="kw btn btn-success"><%=keys%></p>
+
+                    </div>
+                    <div class="caption">
+                        <h5><%=cate.title%></h5>
+                        <p><a href="detailsView?tid=<%=cate.tid%>&&cuid=<%=cate.cuid%>" class="btn btn-primary" role="button">查看详情</a> </p>
+                    </div>
+
+                </div>
+        <%})%>
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in box" id="city">
+            <div class="row box">
+
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in box" id="scenic">
+            <div class="row box">
+
+            </div>
+        </div>
+        <div role="tabpanel" class="tab-pane fade in box" id="culture">
+            <div class="row box">
+
+            </div>
+        </div>
+    </div>
+    <!--End Tab panes -->
+
+</div>
+</div>
+
+
+    <script type="application/javascript" src="js/forum.js"></script>
+<script type="application/javascript" src="js/forum_img.js"></script>
+<% include footer.ejs %>

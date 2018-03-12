@@ -1,0 +1,242 @@
+<% include head.ejs%>
+<link rel="stylesheet" href="assets/js/plugins/datatables/jquery.dataTables.min.css">
+<link rel="stylesheet" href="assets/css/themes/datatables.css">
+<main id="main-container">
+<div class="block">
+    <div class="block-header">
+        <h3 class="block-title">景观民宿</h3>
+    </div>
+    <div class="block-content">
+        <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+        <form action="" method="GET">
+            <table class="table table-bordered table-striped js-dataTable-full">
+            <thead>
+            <tr>
+                <th></th>
+                <th style="width: 30%;">民宿名字</th>
+                <th class="hidden-xs">民宿地址</th>
+                <th class="hidden-xs" style="width: 15%;">兑换所需积分</th>
+                <th class="text-center" style="width: 25%;">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <% {data.forEach(function (data) {
+            if(data.wkeywords=="景观民宿"){
+            %>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="font-w600"><%=data.whtitle%></td>
+                <td class="hidden-xs"><%=data.waddress%></td>
+                <td class="hidden-xs"><%=data.whrank%></td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn delate" Style="background-color: Transparent; border-style :none;" wid="<%=data.wid%>">删除</button>
+                        <button class="btn change" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">修改</button>
+                        <button class="btn checkdetail" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">查看详情</button>
+
+                    </div>
+                </td>
+            </tr>
+            <%}})}%>
+            </tbody>
+        </table>
+        </form>
+    </div>
+</div>
+
+
+<div class="block">
+    <div class="block-header">
+        <h3 class="block-title">温泉民宿</h3>
+    </div>
+    <div class="block-content">
+        <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+        <table class="table table-bordered table-striped js-dataTable-full">
+            <thead>
+            <tr>
+                <th class="text-center"></th>
+                <th style="width: 30%;">民宿名字</th>
+                <th class="hidden-xs">民宿地址</th>
+                <th class="hidden-xs" style="width: 15%;">兑换所需积分</th>
+                <th class="text-center" style="width: 25%;">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% {data.forEach(function (data) {
+            if(data.wkeywords=="温泉民宿"){
+            %>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="font-w600"><%=data.whtitle%></td>
+                <td class="hidden-xs"><%=data.waddress%></td>
+                <td class="hidden-xs"><%=data.whrank%></td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn delate" Style="background-color: Transparent; border-style :none;" wid="<%=data.wid%>">删除</button>
+                        <button class="btn change" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">修改</button>
+                        <button class="btn checkdetail" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">查看详情</button>
+                    </div>
+                </td>
+            </tr>
+            <%}})}%>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="block">
+    <div class="block-header">
+        <h3 class="block-title">海滨民宿</h3>
+    </div>
+    <div class="block-content">
+        <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+        <table class="table table-bordered table-striped js-dataTable-full">
+            <thead>
+            <tr>
+                <th class="text-center">#</th>
+                <th style="width: 30%;">民宿名字</th>
+                <th class="hidden-xs">民宿地址</th>
+                <th class="hidden-xs" style="width: 15%;">兑换所需积分</th>
+                <th class="text-center" style="width: 25%;">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% {data.forEach(function (data) {
+            if(data.wkeywords=="海滨民宿"){
+            %>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="font-w600"><%=data.whtitle%></td>
+                <td class="hidden-xs"><%=data.waddress%></td>
+                <td class="hidden-xs"><%=data.whrank%></td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn delate" Style="background-color: Transparent; border-style :none;" wid="<%=data.wid%>">删除</button>
+                        <button class="btn change" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">修改</button>
+                        <button class="btn checkdetail" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">查看详情</button>
+                    </div>
+                </td>
+            </tr>
+            <%}})}%>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="block">
+    <div class="block-header">
+        <h3 class="block-title">农园民宿</h3>
+    </div>
+    <div class="block-content">
+        <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+        <table class="table table-bordered table-striped js-dataTable-full">
+            <thead>
+            <tr>
+                <th class="text-center">#</th>
+                <th style="width: 30%;">民宿名字</th>
+                <th class="hidden-xs">民宿地址</th>
+                <th class="hidden-xs" style="width: 15%;">兑换所需积分</th>
+                <th class="text-center" style="width: 25%;">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% {data.forEach(function (data) {
+            if(data.wkeywords=="农园民宿"){
+            %>
+            <tr>
+                <td class="text-center">1</td>
+                <td class="font-w600"><%=data.whtitle%></td>
+                <td class="hidden-xs"><%=data.waddress%></td>
+                <td class="hidden-xs"><%=data.whrank%></td>
+                <td class="text-center">
+                    <div class="btn-group">
+                        <button class="btn delate" Style="background-color: Transparent; border-style :none;" wid="<%=data.wid%>">删除</button>
+                        <button class="btn change" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">修改</button>
+                        <button class="btn checkdetail" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">查看详情</button>
+                    </div>
+                </td>
+            </tr>
+            <%}})}%>
+            </tbody>
+        </table>
+    </div>
+</div>
+    <div class="block">
+        <div class="block-header">
+            <h3 class="block-title">传统建筑民宿</h3>
+        </div>
+        <div class="block-content">
+            <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+            <table class="table table-bordered table-striped js-dataTable-full">
+                <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th style="width: 30%;">民宿名字</th>
+                    <th class="hidden-xs">民宿地址</th>
+                    <th class="hidden-xs" style="width: 15%;">兑换所需积分</th>
+                    <th class="text-center" style="width: 25%;">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% {data.forEach(function (data) {
+                if(data.wkeywords=="传统建筑民宿"){
+                %>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td class="font-w600"><%=data.whtitle%></td>
+                    <td class="hidden-xs"><%=data.waddress%></td>
+                    <td class="hidden-xs"><%=data.whrank%></td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <button class="btn delate" Style="background-color: Transparent; border-style :none;" wid="<%=data.wid%>">删除</button>
+                            <button class="btn change" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">修改</button>
+                            <button class="btn checkdetail" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">查看详情</button>
+                        </div>
+                    </td>
+                </tr>
+                <%}})}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="block">
+        <div class="block-header">
+            <h3 class="block-title">艺术文化民宿</h3>
+        </div>
+        <div class="block-content">
+            <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+            <table class="table table-bordered table-striped js-dataTable-full">
+                <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th style="width: 30%;">民宿名字</th>
+                    <th class="hidden-xs">民宿地址</th>
+                    <th class="hidden-xs" style="width: 15%;">兑换所需积分</th>
+                    <th class="text-center" style="width: 25%;">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% {data.forEach(function (data) {
+                if(data.wkeywords=="艺术文化民宿"){
+                %>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td class="font-w600"><%=data.whtitle%></td>
+                    <td class="hidden-xs"><%=data.waddress%></td>
+                    <td class="hidden-xs"><%=data.whrank%></td>
+                    <td class="text-center">
+                        <div class="btn-group">
+                            <button class="btn delate" Style="background-color: Transparent; border-style :none;" wid="<%=data.wid%>">删除</button>
+                            <button class="btn change" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">修改</button>
+                            <button class="btn checkdetail" type="button" Style="background-color: Transparent; border-style :none;"  wid="<%=data.wid%>">查看详情</button>
+                        </div>
+                    </td>
+                </tr>
+                <%}})}%>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+<% include footer.ejs%>

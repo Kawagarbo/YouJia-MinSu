@@ -1,0 +1,82 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:350rpx;width:100%;">
+  <block wx:for="{{imgUrls}}" wx:key="">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" style="height:350rpx;width:100%;"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="container">
+    <view class="marge">
+      福利民宿兑换来袭
+    </view>
+     <!-- <view class="welfare" wx:for="{{welfare}}"  wx:key="">  
+      <view class="top-xian" >
+        <view class="group">
+          <block wx:for="{{iconColor}}"  wx:key="">
+            <icon type="download" color="{{item}}"/>
+          </block>
+        </view> 
+        <view class="thistitle">    
+         小编精选
+        </view>
+      </view>
+      <view class="welfareimg">
+        <image src="{{item.whpic[0]}}" class="innerimg"></image>
+      </view>
+      <view class="welfaredata">
+        <view class="title" decode="{{true}}">        
+          <text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.whtitle}}
+          </text>
+        </view>
+       
+
+
+        </view> 
+        <view class="mybutton">
+            <button type="button" size="mini" class="mini">
+              立即兑换
+            </button>
+        </view>
+      </view>
+      <view class="bottom-xian">
+        <view class="type">
+           &{{item.wkeywords}}
+        </view>
+        <view class="lookdetail">
+        <!--跳转到详情  -->
+          <!-- <navigator url="../demo/demo?id={{item.wid}}">
+            查看详情>>
+          </navigator>
+        </view>
+      </view>
+     </view>  --> 
+     <view class="welfare-list">
+        <view class='welfare-item'>
+          <view class='welfare-item-top'>
+            <icon type="download" class='icon'/>
+            <view class="icon-text">
+              小编精选
+            </view>
+          </view>
+          <view class='welfare-item-bottom' wx:for="{{welfare}}"  wx:key="" bindtap='welfaerDetailTap' data-wid='{{item.wid}}'>
+            <image src="{{item.whpic[0]}}"></image>
+            <view class="content">
+              <view class='content-title'>{{item.whtitle}}</view>
+              <view class='content-text'>{{item.wkeywords}}</view>
+              <view class='content-text'>需要积分： {{item.whrank}}分</view>
+              <view class='content-text'>时间： {{item.wdeadline}}</view>
+              <view class='content-btn'>
+                <view class='oldprice'>268￥</view>
+                <view class='duihuanbtn'>立即兑换</view>
+              </view>
+            </view>
+          </view>
+        </view>
+     
+     </view>
+    <view class="imbottom">
+      已经到底了
+    </view>
+</view>
+

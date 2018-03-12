@@ -1,0 +1,66 @@
+<% include head.ejs%>
+<!--内容块-->
+<body class="bodyper">
+<div class="container">
+    <div class="row">
+        <div class="wrapper">
+            <div class="userinfo">
+                <div class="media headinfo">
+                    <div class="media-left media-middle">
+                        <a href="#">
+                            <img class="media-object headimg" src="img/view1.jpg" alt="背景">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading"><%=userse.username%></h4>
+                        <a href="personinfo" id="personinfo">
+                            <i class="glyphicon glyphicon-cog">编辑个人资料</i>
+                        </a>
+                        <button class="btn-write btn btn-info">
+                            <i class="glyphicon glyphicon-pencil">发表文章</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="personcontent">
+            <ul class="nav nav-tabs">
+                <li role="presentation"><a href="person">我的预约</a></li>
+                <li role="presentation" class="active"><a href="myarticle">我的文章</a></li>
+                <li role="presentation"><a href="userpoint">我的积分</a></li>
+                <li role="presentation"><a href="myboon">我的福利</a></li>
+            </ul>
+            <div class="detail2">
+                    <% if(artdata.length==0){%>
+                    <div class="noart">
+                        <i class="glyphicon glyphicon-pencil">还没有发表文章</i>
+                    </div>
+                    <%}else{%>
+                    <%for(var i=0;i<artdata.length;i++){%>
+                    <div class="media artlist">
+                        <div class="media-left media-middle">
+                            <a href="#">
+                                <img class="media-object artimg" src="../img/view1.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading artitle" >游记名称：<%=artdata[i].title%></h4>
+                            <h4 class="media-heading artitle">作者：<%=artdata[i].author%></h4>
+                            <div class="rightdo">
+                                <button class="uptext btn btn-xs btn-success" value="<%=artdata[i].tid%>" type="button" data-toggle="tooltip" title="修改">
+                                    <i class="fa fa-pencil"></i>
+                                </button>
+                                <button class="deltext btn btn-xs btn-danger" value="<%=artdata[i].tid%>"  type="button" data-toggle="tooltip" title="删除">
+                                    <i class="fa fa-times"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                <%}%>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<% include footer.ejs%>

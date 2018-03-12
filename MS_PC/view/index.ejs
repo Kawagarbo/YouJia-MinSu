@@ -1,0 +1,208 @@
+
+
+<% include head.ejs%>
+
+<!-- 网页内容块 -->
+<div class="body">
+    <!--轮播图块-->
+    <div id="myCarousel" class="carousel slide">
+        <!-- 轮播点击的小圆点 -->
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active" style="background-color:#FD6A6C;"></li>
+            <li data-target="#myCarousel" data-slide-to="1" style="background-color:#FD6A6C;"></li>
+            <li data-target="#myCarousel" data-slide-to="2" style="background-color:#FD6A6C;"></li>
+        </ol>
+        <!-- 轮播的图片 -->
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="./img/slider-bg01.jpg" alt="First slide" class="img-responsive" style="width:100%;">
+            </div>
+            <div class="item">
+                <img src="./img/slider-bg02.jpg" alt="Second slide" class="img-responsive" style="width:100%;">
+            </div>
+            <div class="item">
+                <img src="./img/slider-bg03.jpg" alt="Third slide" class="img-responsive" style="width:100%;">
+            </div>
+        </div>
+        <!-- 轮播左右导航 -->
+        <a class="carousel-control left" id="carousel-control-left" href="#myCarousel" data-slide="prev">
+            <span>&lsaquo;</span>
+        </a>
+        <a class="carousel-control right" id="carousel-control-right" href="#myCarousel" data-slide="next">
+            <span>&rsaquo;</span>
+        </a>
+    </div>
+
+    <!--内容块-->
+    <div class="container">
+        <ul class="list-group">
+            <li class="list-group-item" style="border: none">
+                <div class="item-title-top">
+                    <h1>POPULAR DESTINATION </h1>
+                    <div class="title-box">
+                        <p class="text">热门目的地民宿</p>
+                        <span>玩转天下民宿</span>
+                    </div>
+                </div>
+                <div class="row hot-destination">
+                    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 hot-destination-item" data-text="北京市">
+                        <div class="thumbnail">
+                            <img src="img/beijing.jpg" alt="">
+                            <div class="caption" style="">
+                                <h2 class="hot-destination-item-title-text">聚·在北京</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 hot-destination-item" data-text="上海市">
+                        <div class="thumbnail">
+                            <img src="img/shanghai.jpg" alt="...">
+                            <div class="caption">
+                                <h2 class="hot-destination-item-title-text">潮·在上海</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 hot-destination-item" data-text="广州市">
+                        <div class="thumbnail">
+                            <img src="img/guangzhou.jpg" alt="">
+                            <div class="caption">
+                                <h2 class="hot-destination-item-title-text">乐·在广州</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 hot-destination-item" data-text="成都市">
+                        <div class="thumbnail">
+                            <img src="img/chengdu.jpg" alt="">
+                            <div class="caption">
+                                <h2 class="hot-destination-item-title-text">自·在成都</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-toggle="distpicker" id="distpicker" class="col-xs-12" style="margin-bottom: 15px"><!-- container -->
+                        <div class="help-block" style="font-size: 20px;">更多热门目的地选择</div>
+                        <div class="col-xs-5" style="padding: 0px;">
+                            <select id="province" name="province" class="form-control" style="border-radius: 0px;height: 50px;border-color: white;background:linear-gradient(to left, #1c92d2 , #f2fcfe);"></select><!-- 省 -->
+                        </div>
+                        <div class="col-xs-6" style="padding: 0px">
+                            <select id="city" name="city" class="form-control" style="border-radius: 0px;height: 50px;border-color: white;background:linear-gradient(to left, #1c92d2 , #f2fcfe);"></select><!-- 市 -->
+                        </div>
+                        <div class="col-xs-1" style="padding: 0px">
+                            <button class="btn  form-control btn-warning glyphicon glyphicon-search" style="border-radius: 0px;height: 50px;margin-top: -1px" id="hpbtn" type="button"></button>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 hot-destination-item" data-text="香港">
+                        <div class="thumbnail">
+                            <img src="img/xianggang.jpg" alt="">
+                            <div class="caption">
+                                <h2 class="hot-destination-item-title-text">吃·在香港</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 hot-destination-item" data-text="杭州市">
+                        <div class="thumbnail">
+                            <img src="img/hangzhou.jpg" alt="">
+                            <div class="caption">
+                                <h2 class="hot-destination-item-title-text">约·在杭州</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 hot-destination-item" data-text="三亚市">
+                        <div class="thumbnail">
+                            <img src="img/sanya.jpg" alt="">
+                            <div class="caption">
+                                <h2 class="hot-destination-item-title-text">玩·在三亚</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 hot-destination-item" data-text="厦门市">
+                        <div class="thumbnail">
+                            <img src="img/xiamen.jpg" alt="">
+                            <div class="caption">
+                                <h2 class="hot-destination-item-title-text">浪·在厦门</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="list-group-item" style="border: none">
+                <div class="item-title-top">
+                    <h1>STORY SHARING </h1>
+                    <div class="title-box">
+                        <p class="text">故事分享</p>
+                        <span>每一间民宿都有一个故事</span>
+                    </div>
+                </div>
+                <% for(var j=0;j<articleData.length;j++){ %>
+                <div class="row story-item" data-tid="<%= articleData[j].tid %>" data-cuid="<%= articleData[j].cuid %>">
+                            <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5 story-item-left">
+                            <img src="<%= articleImg[j][0] %>" alt="" class="img-responsive">
+                            </div>
+                            <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7 story-item-right">
+                            <div class="row">
+                            <div class="col-xs-12">
+                            <div class="col-xs-5 col-sm-3 col-md-3 col-lg-3 story-item-right-top">
+                            <img src="<%= articleImg[j][1] %>" alt="" class="img-responsive">
+                            </div>
+                            <div class="col-xs-7 col-sm-9 col-md-9 col-lg-9 story-item-right-bottom">
+                            <h4><%= articleData[j].title %></h4>
+                            <h5>作者：<%= articleData[j].author %></h5>
+                    </div>
+                    </div>
+                    </div>
+                    <div class="row">
+                            <div class="col-xs-12" style="height: 100px;overflow:hidden;text-overflow:ellipsis;">
+                            <p><%= articleData[j].acontent %></p>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                <% }%>
+                <div class="moreinfo">
+                    <a class="btn btn-default" href="forum">查看更多>></a>
+                </div>
+            </li>
+            <li class="list-group-item" style="border: none">
+                <div class="item-title-top">
+                    <h1>WELFARE COMMUNITY </h1>
+                    <div class="title-box">
+                        <p class="text">YouJia福利社</p>
+                        <span>特色免费民宿等你来体验</span>
+                    </div>
+                </div>
+                <% for(var i=0;i<welfareData.length;i++){ %>
+                <div class="row welfare-item" data-wid="<%= welfareData[i].wid %>">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-7 welfare-item-left" >
+                        <img src="<%= welfareImg[i][0]%>" alt="" class="img-responsive">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-5 welfare-item-right">
+                        <a><h3><%= welfareData[i].whtitle %></h3></a>
+                        <ol>
+                            <li>
+                                <span class="welfare-item-right-text1">住所类型：</span><span><%= welfareData[i].wkeywords %></span>
+                            </li>
+                            <li>
+                                <span class="welfare-item-right-text1">地址：</span> <span><%= welfareData[i].waddress %></span>
+                            </li>
+                            <li>
+                                <span class="welfare-item-right-text1">兑换所需积分：</span> <span><%= welfareData[i].whrank %></span>
+                            </li>
+                            <li>
+                                <span class="welfare-item-right-text1">入住时间：</span> <span><%= welfareData[i].wdeadline %></span>
+                            </li>
+                        </ol>
+                        <div style="margin-top: 40px;text-align: center;margin-bottom: 20px;">
+                            <a class="btn btn-warning" href="welfaredetail?wid=<%= welfareData[i].wid %>">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                <div class="moreinfo">
+                    <a class="btn btn-default" href="welfareindex">查看更多>></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<% include footer.ejs%>

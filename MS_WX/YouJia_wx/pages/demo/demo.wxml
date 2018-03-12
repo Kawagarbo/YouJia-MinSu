@@ -1,0 +1,99 @@
+    <swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" style="height:300rpx;width:100%;">
+      <block wx:for="{{imgUrls}}" wx:key="">
+         <swiper-item>
+          <image src="{{item}}" class="slide-image" style="height:400rpx;width:100%;"/>
+         </swiper-item>
+      </block>
+    </swiper>
+<view class="containers"  wx:for="{{welfare}}" wx:key="">
+  <view wx:if="{{id==item.wid}}" >
+ 
+    <view class="topbox">
+      <view class="title"> 
+        {{item.whtitle}}
+      </view>
+      <view class="wrank">
+        <view class="views">
+          需要的积分 :
+        </view>
+        <view class="views_view">
+          {{item.whrank}}分
+        </view>             
+      </view>
+      <view class="wrank">
+        <view class="views">
+          原价：
+        </view>
+        <view class="views_view price">
+          666￥
+        </view>        
+      </view>
+      <view class="telephone">
+        <view class="views">
+          房东电话：
+        </view>
+        <view class="views_view">
+          {{item.whostphone}}
+        </view>
+      </view>
+      <view class="duihuan">
+        <button type="button" size="middle" color="red">
+          立即兑换
+        </button>
+      </view>
+      <view class="space">
+          
+      </view> 
+    </view>
+    <view class="bottom-box">
+      <view class="sons">
+        <view class="bottomviews address">
+          地址
+        </view>
+        <view class="bottomviews_view addresscontent">
+          {{item.waddress}}
+        </view>
+      </view>
+      <view class="sons">
+        <view class="bottomviews facility">
+          设施
+        </view>
+        <view class="bottomviews_view facilitycontent" >
+          {{item.facility}}
+        </view>
+      </view>
+      <view class="sons">
+        <view class="bottomviews">
+          入住时间段
+        </view>
+        <view class="bottomviews_view">
+          {{item.wdeadline}}
+        </view>
+      </view>
+      <view class="sons">
+        <view class="bottomviews">
+          接待时间
+        </view>
+        <view class="bottomviews_view">
+          {{item.wreceptiontime}}
+        </view>
+      </view>
+      <view class="sons">
+        <view class="bottomviews">
+          退房时间
+        </view>
+        <view class="bottomviews_view">
+          {{item.checkouttime}}
+        </view>
+      </view>
+    </view> 
+       <view class="intorduce">
+          <view class="intorducetitle">
+            民宿介绍
+          </view>
+          <view class="intorducecontent" style=" display:block;white-space: pre-wrap;"> {{item.whdet}}
+          </view>
+      </view>
+  </view>
+</view>

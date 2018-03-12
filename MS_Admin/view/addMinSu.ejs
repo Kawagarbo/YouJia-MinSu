@@ -1,0 +1,171 @@
+<% include head.ejs%>
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Page Header -->
+    <div class="content bg-gray-lighter">
+        <div class="row items-push">
+            <div class="col-sm-8">
+                <h1 class="page-heading">
+                    添加民宿信息
+                </h1>
+            </div>
+        </div>
+    </div>
+    <!-- END Page Header -->
+
+    <!-- Page Content -->
+    <div class="content content-narrow">
+        <!-- Material Design -->
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- Static Labels -->
+                <div class="block">
+                    <div class="block-content block-content-narrow">
+                        <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
+
+                            <div class="form-group">
+                                <label class="col-xs-12" for="example-text-input">民宿主题</label>
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="text" id="example-title-input" name="example-title-input" placeholder="主题...">
+                                    <div class="help-block">输入在网站显示的民宿标题</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-xs-12" for="example-text-input">民宿所在地址</label>
+
+                                    <div data-toggle="distpicker" id="distpicker" class="col-xs-12" style="margin-bottom: 15px"><!-- container -->
+                                        <div class="help-block">请选择省市区</div>
+                                        <div class="col-xs-3" style="padding: 0px;text-align: center">
+                                            <select id="provinceName" name="provinceName" class="form-control"></select><!-- 省 -->
+                                        </div>
+                                        <div class="col-xs-3" style="padding: 0px">
+                                            <select id="cityName" name="cityName" class="form-control"></select><!-- 市 -->
+                                        </div>
+                                        <div class="col-xs-3" style="padding: 0px">
+                                            <select id="areaName" name="areaName" class="form-control"></select><!-- 区 -->
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-xs-7">
+                                    <input class="form-control" type="text" id="example-address-detail-input" name="example-address-detail-input" placeholder="详细地址...">
+                                        <div class="help-block">请输入精准的民宿的详细地址</div>
+                                    </div>
+
+
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-xs-12" for="example-text-input">订购联系方式</label>
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="text" id="example-phone-input" name="example-phone-input" placeholder="电话...">
+                                    <div class="help-block">请输入能订购民宿的联系方式</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-xs-12" for="example-select">选择民宿类型</label>
+                                <div class="col-xs-10">
+                                    <select class="form-control" id="example-type-select" name="example-type-select" size="1">
+                                        <option value="0">Please select</option>
+                                        <option value="1">景观民宿</option>
+                                        <option value="2">温泉民宿</option>
+                                        <option value="3">海滨民宿</option>
+                                        <option value="4">农园民宿</option>
+                                        <option value="5">传统建筑民宿</option>
+                                        <option value="6">艺术文化民宿</option>
+                                    </select>
+                                    <div class="help-block">选择民宿的类型</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-xs-12" for="example-servertime">输入接待时间</label>
+
+                                <div class="col-xs-10">
+                                    <input class="form-control" type="text" id="example-servertime" name="example-servertime" placeholder="服务时间...">
+                                    <div class="help-block">请输入民宿接待游客的准确时间</div>
+                                </div>
+
+                            </div>
+                            <!--<div class="form-group">-->
+                            <!--<label class="col-xs-12" for="note-image-input">选择民宿的图片</label>-->
+                            <!--<div class="col-xs-12">-->
+                            <!--<input class="note-image-input" id="note-image-input" type="file" name="imgfiles[]" accept="image/*" multiple="multiple">-->
+                            <!--</div>-->
+                            <!--</div>-->
+                            <div class="form-group">
+                                <label class="col-xs-12" for="note-image-url">上传图片的URL</label>
+                                <div class="col-xs-10">
+                                    <textarea class="form-control" id="note-image-url" name="example-textarea-input" rows="6" placeholder="描述..."></textarea>
+                                    <div class="help-block">请输入图片的地址，每张图片地址间用空格隔开</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-xs-12" for="example-textarea-input">民宿详细描述</label>
+                                <div class="col-xs-10">
+                                    <textarea class="form-control" id="example-textarea-input" name="example-textarea-input" rows="6" placeholder="描述..."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-xs-12" for="example-keywords-input">民宿搜索的关键字</label>
+                                <div class="col-xs-10">
+                                    <textarea class="form-control" id="example-keywords-input" name="example-textarea-input" rows="6" placeholder="描述..."></textarea>
+                                    <div class="help-block">请输入用来搜索民宿的关键字，各个关键字间用空格隔开</div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-10">
+                                    <button class="btn btn-sm btn-primary" type="button" id="addbtn">确认添加</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- END Static Labels -->
+            </div>
+        </div>
+        <!-- END Material Design -->
+    </div>
+    <!-- END Page Content -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="mymodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">添加成功</h4>
+                </div>
+                <div class="modal-body">
+                    <p>你成功的添加了一条记录点击继续按钮开始添加新的记录，点击立即查看可以查看刚才添加的记录</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" id="surebtn" data-dismiss="modal">继续</button>
+                    <button type="button" class="btn btn-primary" id="lookbtn">立即查看</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="failmodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">操作失败</h4>
+                </div>
+                <div class="modal-body">
+                    <p>出现了一个网络问题，你的操作没有成功&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</main>
+<!-- END Main Container -->
+<% include footer.ejs%>

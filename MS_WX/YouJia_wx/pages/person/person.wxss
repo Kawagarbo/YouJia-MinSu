@@ -1,0 +1,89 @@
+/* pages/person/person.wxss */
+page{
+    background-color: rgba(245,245,245,0.3);
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.btn-getuser{
+  background-color: rgba( 220,220,220, 0.4);
+}
+.box1{
+position: relative;
+display: flex;
+height: 250rpx;
+width: 100%;
+flex-direction: row;
+align-items: center;
+}
+.btn-perinfo{
+  justify-content: flex-end;
+  position: absolute;
+  left: 30rpx;
+  top: 100rpx;
+  font-size: 13px;
+  color: #555;
+  padding: 2px;
+  border-radius: 4px;
+   background-color: rgba( 220,220,220, 0.2); 
+}
+.userinfo-avatar{
+  margin-left: 10px;
+}
+.box1 image{
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 64rpx;
+}
+.box1-in1{
+  position: relative;
+  display: flex;
+  margin-left:10px;
+  font-size: 20px; 
+  flex-direction: column;
+}
+.btn-write{
+  justify-content: flex-end;
+  position: absolute;
+  right: 20rpx;
+  bottom: 0rpx;
+  font-size: 15px;
+  color: #555;
+  padding: 3px;
+  border-radius: 2px;
+  box-shadow: 0 1px 1px 0px #7A9D96;
+   background-color: rgba( 220,220,220, 0.2); 
+}
+.box2{
+  width: 100%;
+  margin: 30rpx 0;
+  display: flex;
+  flex-direction: column;
+}
+.box2-in2{
+  align-items: center;
+  line-height: 100rpx;
+  margin: 20rpx 0;
+  background-color: #fff; 
+  display: flex;
+  flex-direction: row;
+  padding: 0 3px;
+  
+}
+.in2-img{
+  width: 45rpx;
+  height: 45rpx;
+  margin-right: 5px;
+}
+.in2-text{
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 14px;
+    color: #777;
+    letter-spacing: 1px;
+}

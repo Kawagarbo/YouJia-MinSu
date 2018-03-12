@@ -1,0 +1,29 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{imgUrls}}" wx:key="">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" style="width:100%; height:150"/>    
+    </swiper-item>
+  </block>
+</swiper>
+<view class='article'>
+  <view wx:for="{{detailist}}" wx:key="">
+   <view wx:if="{{item.tid==tid}}" class='title'>{{item.title}}</view>
+    <view class='content'>{{item.acontent}}</view>
+  </view>
+</view>
+<view class='comment' wx:for="{{detailist}}" wx:key="">
+  <image src='../../img/icon/message.png' class='mes'></image>
+
+  <input type='text' placeholder='我想说' bindinput="bindKeyInput"    id='cominput'></input>
+   <button class='btn_send'  bindtap='send' data-cuid="{{item.cuid}}">发送</button>
+  
+</view>
+<view  class='contents'>
+<view class='comment-item' wx:for="{{commentData}}" wx:key="">
+  <image src="../../img/6.jpg"></image>
+  <view class='author'>某某某  ：</view>
+  <view class='comment-text'>{{item.comments}}</view>
+</view>
+  
+ </view>

@@ -1,0 +1,16 @@
+/* pages/mypoints/mypoints.wxss */
+page{
+  background-color: rgba(245,245,245,0.3);
+}
+.boxpo{
+  display: flex;
+  background-color: white;
+  text-align: center;
+  flex-direction: row;
+  width: 100%;
+}
+.boxpo view{
+  width: 50%;
+  height: 100rpx;
+  line-height: 100rpx;
+}

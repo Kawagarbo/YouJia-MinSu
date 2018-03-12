@@ -1,0 +1,88 @@
+
+.bgbox{
+    margin-top:50px;
+}
+#littlehead{
+    height:50px;
+    width:100%;
+    border:1px solid lightslategray;
+    line-height: 50px;
+    text-align: center;font-size: 25px;
+    background-image: linear-gradient(10deg, #CC9E7A,#9BA8CB,  #CC9E7A,#D1AC37);
+    border-radius: 15px;
+}
+.box{
+    height:320px;
+    border:1px solid #E7E7E7;
+    background-color: white;
+}
+#div2{
+    width:100%;
+    overflow: hidden;
+}
+.bgimg{
+    width:100%;
+    height:100%;
+    position:relative;
+    left:-15px;
+}
+.container-fluid{
+    width:90%;
+}
+.allli{
+    position: relative;
+    top:35px;
+}
+.allli ul{
+    width:90%;
+    position: relative;
+    left:30px;
+}
+.allli ul li{
+    margin-top:20px;
+}
+li{
+    list-style: none;
+}
+.classthumbnail{
+    height:320px;
+    padding:0px;
+}
+.classthumbnail h4{
+    height:26px;
+}
+.classcaption{
+    background-color: white;
+    text-align: center;
+    position: relative;
+    margin-top: 10px;
+}
+.classcaption ul{
+    height:80px;
+    width:auto;
+    margin:0 auto;
+}
+.classcaption ul li{
+    height:80px;
+    /*margin-left: 30px;*/
+    width:20%;
+    float:left;
+}
+.hover{
+    border:1px solid white;
+    border-radius: 3px;
+}
+.classcaption ul li img{
+    height:80px;
+    width:100%;
+}
+img{
+    cursor: pointer;
+}
+b{
+    font-size: 15px;
+}
+.spans span{
+    font-size: 16px;
+    margin-right:50px;
+}

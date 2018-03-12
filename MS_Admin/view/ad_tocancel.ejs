@@ -1,0 +1,43 @@
+<% include head.ejs%>
+<main id="main-container">
+    <div class="block">
+        <div class="block-header">
+            <h3 class="block-title"><%=username.username%>的预约详情</h3>
+        </div>
+        <div class="block-content">
+            <!-- DataTables init on table by adding .js-dataTable-simple class, functionality initialized in js/pages/base_tables_datatables.js -->
+            <form>
+                <table class="table table-bordered table-striped js-dataTable-full">
+                    <thead>
+                    <tr>
+                        <th>民宿id</th>
+                        <th style="width: 30%;">民宿名称</th>
+                        <th class="hidden-center">电话</th>
+                        <th class="hidden-center">地址</th>
+                        <th class="hidden-xs" style="width: 15%;">服务时间</th>
+                        <th class="text-center" style="width: 10%;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% for(var h=0;h<data.length;h++){%>
+                    <tr>
+                        <td class="text-center"><%=data[h].hid%></td>
+                        <td class="font-w600"><%=data[h].htitle%></td>
+                        <td class="hidden-xs"><%=data[h].hphone%></td>
+                        <td class="hidden-xs"><%=data[h].haddress%></td>
+                        <td class="hidden-xs"><%=data[h].hservetime%></td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <input type="hidden" id="myuid" value="<%=username.uid%>">
+                                <button class="btn-cancelit btn btn-info" type="button" value="<%=data[h].hid%>">取消预约</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <% }%>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+</main>
+<% include footer.ejs%>

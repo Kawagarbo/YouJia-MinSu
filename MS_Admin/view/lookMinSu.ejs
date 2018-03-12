@@ -1,0 +1,129 @@
+<% include head.ejs%>
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Page Header -->
+    <div class="content bg-gray-lighter">
+        <div class="row items-push">
+            <div class="col-sm-7">
+                <h1 class="page-heading">
+                    民宿信息管理 <small>此信息仅超级管理员可见，禁止外传</small>
+                </h1>
+            </div>
+            <div class="col-sm-5 text-right hidden-xs">
+                <ol class="breadcrumb push-10-t">
+                    <li>表格</li>
+                    <li><a class="link-effect" href="">所有民宿信息</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <!-- END Page Header -->
+
+    <!-- Page Content -->
+    <div class="content">
+        <!-- Dynamic Table Full -->
+        <div class="block">
+            <div class="block-header">
+                <h3 class="block-title">所有民宿信息表</h3>
+            </div>
+            <div class="block-content">
+                <!-- DataTables init on table by adding .js-dataTable-full class, functionality initialized in js/pages/base_tables_datatables.js -->
+                <table class="table table-bordered table-striped js-dataTable-full">
+                    <thead>
+                    <tr>
+                        <th class="text-center">民宿ID</th>
+                        <th class="text-center">民宿名称</th>
+                        <th class="hidden-xs text-center">民宿类型</th>
+                        <th class="hidden-xs text-center">上传时间</th>
+                        <th class="hidden-xs text-center">上一次修改时间</th>
+                        <th class="text-center">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody">
+                    <% for(var i=0;i<minsudata.length;i++) { %>
+                    <tr>
+                        <td class="text-center"><%= minsudata[i].hid %></td>
+                        <td class="font-w600 text-center"><%= minsudata[i].htitle %></td>
+                        <td class="hidden-xs text-center">
+                            <%= minsudata[i].htype==1?"景观民宿":"" %>
+                            <%= minsudata[i].htype==2?"温泉民宿":"" %>
+                            <%= minsudata[i].htype==3?"海滨民宿":"" %>
+                            <%= minsudata[i].htype==4?"农园民宿":"" %>
+                            <%= minsudata[i].htype==5?"传统建筑民宿":"" %>
+                            <%= minsudata[i].htype==6?"艺术文化民宿":"" %>
+                        </td>
+                        <td class="hidden-xs text-center"><%= minsudata[i].huptime %></td>
+                        <td class="hidden-xs text-center"><%= minsudata[i].hupdatatime %></td>
+                        <td class="text-center">
+                            <div class="btn-group">
+                                <a class="btn btn-xs btn-info" data-toggle="tooltip" title="修改" href="updataMinSu?hid=<%= minsudata[i].hid %>"><i class="fa fa-pencil"></i></a>
+                                <a class="btn btn-xs btn-warning delbtn" data-toggle="tooltip" title="删除" type="botton" data-id="<%= minsudata[i].hid %>"><i class="fa fa-times"></i></a>
+                                <a class="btn btn-xs btn-primary" data-toggle="tooltip" title="查看信息" href="lookdetail?hid=<%= minsudata[i].hid %>">查看详情</a>
+                            </div>
+                        </td>
+                    </tr>
+                    <% }%>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- END Dynamic Table Full -->
+    </div>
+    <!-- END Page Content -->
+
+    <!--模态框组-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="confirmmodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">确认删除</h4>
+                </div>
+                <div class="modal-body">
+                    <p>请问你是否确认要删除该条民宿信息记录，确认删除后将不能恢复。继续请点击确认按钮，取消点击关闭按钮</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="confirmbtn">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--删除成功-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="succmodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">删除成功</h4>
+                </div>
+                <div class="modal-body">
+                    <p>你已经成功删除了一条记录</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="failmodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">操作失败</h4>
+                </div>
+                <div class="modal-body">
+                    <p>出现了一个网络问题，你的操作没有成功&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</main>
+<!-- END Main Container -->
+<% include footer.ejs%>

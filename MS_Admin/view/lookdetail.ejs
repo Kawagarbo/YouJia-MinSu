@@ -1,0 +1,166 @@
+<% include head.ejs%>
+<!-- Main Container -->
+<main id="main-container">
+    <!-- Page Header -->
+    <div class="content bg-gray-lighter">
+        <div class="row items-push">
+            <div class="col-sm-8">
+                <h1 class="page-heading">
+                    民宿详细记录
+                </h1>
+            </div>
+        </div>
+    </div>
+    <!-- END Page Header -->
+
+    <!-- Page Content -->
+    <div class="content content-narrow">
+        <!-- Material Design -->
+        <div class="row">
+            <div class="col-xs-12">
+                <!-- Static Labels -->
+                <div class="block">
+                    <div class="block-content block-content-narrow">
+                        <div class="MStitle text-center">
+                            <h3><%= minsudata[0].htitle%></h3>
+                        </div>
+                        <div class="MSaddress" style="margin-top: 30px;padding: 0px 20px;">
+                            <h5>民宿详细地址：</h5>
+                            <p style="margin: 15px 50px;font-size: 16px"><%= minsudata[0].Sumaddress%></p>
+                        </div>
+                        <div class="col-xs-12" style="margin-bottom: 30px">
+                            <div class="MSphone col-xs-4" style="margin-top: 30px;padding: 0px 20px;">
+                                <h5>店家联系电话：</h5>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].hphone%></p>
+                            </div>
+                            <div class="MStype col-xs-4" style="margin-top: 30px;padding: 0px 20px;">
+                                <h5>民宿类型：</h5>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].htype==1?"景观民宿":"" %></p>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].htype==2?"温泉民宿":"" %></p>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].htype==3?"海滨民宿":"" %></p>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].htype==4?"农园民宿":"" %></p>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].htype==5?"传统建筑民宿":"" %></p>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].htype==6?"艺术文化民宿":"" %></p>
+                            </div>
+                            <div class="MSservetime col-xs-4" style="margin-top: 30px;padding: 0px 20px;">
+                                <h5>民宿招待时间：</h5>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].hservetime%></p>
+                            </div>
+                        </div>
+
+                        <div class="MSimg" style="margin-top: 30px;padding: 0px 20px;">
+                            <h5>民宿照片：</h5>
+                            <div class="content content-narrow">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="row items-push">
+                                            <% for(var i=0;i<minsuIMG.length;i++){ %>
+                                            <div class="col-xs-4 animated fadeIn">
+                                                <div class="img-container">
+                                                    <img class="img-responsive" src="<%=minsuIMG[i]%>" alt="">
+                                                    <div class="img-options">
+                                                        <div class="img-options-content">
+                                                            <a class="btn btn-sm btn-default" href="javascript:void(0)"><i class="fa fa-pencil"></i> Edit</a>
+                                                            <a class="btn btn-sm btn-default" href="javascript:void(0)"><i class="fa fa-times"></i> Delete</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <% } %>
+
+
+                                        </div>
+                                        <!-- END Default -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="MSdetail" style="margin-top: 30px;padding: 0px 20px;">
+                            <h5>民宿介绍：</h5>
+                            <p style="margin: 15px 50px;font-size: 16px"><%= minsudata[0].hdetail%></p>
+                        </div>
+                        <div class="col-xs-12" style="margin-bottom: 30px">
+                            <div class="MSuptime col-xs-6" style="margin-top: 30px;padding: 0px 20px;">
+                                <h5>记录上传时间：</h5>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].huptime%></p>
+                            </div>
+                            <div class="MSupdatatime col-xs-6" style="margin-top: 30px;padding: 0px 20px;">
+                                <h5>上一次修改时间：</h5>
+                                <p style="margin: 15px 0px;font-size: 16px"><%= minsudata[0].hupdatatime%></p>
+                            </div>
+                        </div>
+
+
+                        <div class="MSkeywords" style="margin-top: 30px;padding: 0px 20px;">
+                            <h5>民宿关键字：</h5>
+                            <p style="margin: 15px 50px;font-size: 16px"><%= minsudata[0].hkeywords%></p>
+                        </div>
+
+                        <div class="MSBtn text-center" style="margin-top: 30px;padding: 0px 20px;">
+                            <a href="lookMinSu" type="button" class="btn btn-primary">返回</a>
+                            <a href="updataMinSu?hid=<%=minsudata[0].hid%>" type="button" class="btn btn-primary">修改</a>
+                            <a class="btn btn-warning delbtn"  type="botton" data-id="<%= minsudata[0].hid %>">删除</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- END Static Labels -->
+            </div>
+        </div>
+        <!-- END Material Design -->
+    </div>
+    <!-- END Page Content -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="confirmmodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">确认删除</h4>
+                </div>
+                <div class="modal-body">
+                    <p>请问你是否确认要删除该条民宿信息记录，确认删除后将不能恢复。继续请点击确认按钮，取消点击关闭按钮</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="confirmbtn">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!--删除成功-->
+    <div class="modal fade" tabindex="-1" role="dialog" id="succmodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">删除成功</h4>
+                </div>
+                <div class="modal-body">
+                    <p>你已经成功删除了一条记录</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default"  data-dismiss="modal">关闭</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="failmodal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">操作失败</h4>
+                </div>
+                <div class="modal-body">
+                    <p>出现了一个网络问题，你的操作没有成功&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">确认</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</main>
+<!-- END Main Container -->
+<% include footer.ejs%>

@@ -1,0 +1,45 @@
+  <!--pages/hpmsdetail/hpmsdetail.wxml-->
+
+  <!--轮播图 模块 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="">
+      <swiper-item>
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 内容模块 -->
+
+  <!--民宿信息  -->
+  <view class="detail" wx:for="{{msData}}" wx:key="">
+      <view class="detail-item1">
+        <view class="item1-text1">{{item.htitle}}</view>
+        <view class="item1-text2">{{item.htype==1?'景观民宿':''}}{{item.htype==2?'温泉民宿':''}}{{item.htype==3?'海滨民宿':''}}{{item.htype==4?'农园民宿':''}}{{item.htype==5?'传统建筑民宿':''}}{{item.htype==6?'艺术文化民宿':''}}</view>
+      </view>
+      <view class="detail-item2">
+        <view class="item2-text">
+          <view class="textweight">房东号码</view>
+          <view>
+              {{item.hphone}}
+          </view>
+        </view>
+        <view class="item2-text">
+          <view class="textweight">服务时间</view>
+          <view>
+             {{item.hservetime}}
+          </view>
+        </view>
+      </view>
+      <view class="detail-item3">
+         <view class="addr">地址</view>
+        <view>
+        {{item.Sumaddress}}
+        </view>
+      </view>
+      <view class='detail-item4'>
+        <view class="intr">介绍</view>
+        <view>{{item.hdetail}}</view>
+      </view>
+  </view>
+
+  

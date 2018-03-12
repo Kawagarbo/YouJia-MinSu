@@ -1,0 +1,24 @@
+<!--pages/myinfo/myinfo.wxml-->
+<view class='container'>
+   <view class='infobox'>
+      <form bindsubmit='upuserinfo'>
+        <view class='form-list'>
+          <label class="lable">账号:</label>
+          <input type='text' placeholder='请输入年龄' name='userage'></input>
+        </view>
+        <view class='form-list'>
+          <label class="lable">性别:</label>
+          <input type='text' placeholder='请输入性别' name='sex'></input>
+        </view>
+        <view class='form-list'>
+          <label class="lable">电话:</label>
+          <input type='text' placeholder='请输入电话' name='usertel' focus='{{focus}}'></input>
+        </view>
+        <view class='form-list'>
+          <label class="lable">邮箱:</label>
+          <input type='text' placeholder='请输入邮箱' name='useremail'></input>
+        </view>
+         <button class='form-list' type='warn' size='mini' form-type='submit'>提交</button>
+      </form>
+    </view>
+</view>
